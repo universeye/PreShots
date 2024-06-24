@@ -7,49 +7,91 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BFD38EC32C0784E300E1285D /* DevicesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38EC22C0784E300E1285D /* DevicesButtons.swift */; };
-		BFD38EC52C07857100E1285D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38EC42C07857100E1285D /* ImageCell.swift */; };
-		BFD38EC72C07893600E1285D /* DeviceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38EC62C07893600E1285D /* DeviceTypes.swift */; };
+		BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */; };
+		BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C2F02C17023600C567A3 /* ImageResizeFeature */; };
+		BF10C2F92C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C2F82C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift */; };
+		BF10C2FB2C174FAE00C567A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C2FA2C174FAE00C567A3 /* ContentView.swift */; };
+		BF10C2FD2C174FAF00C567A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */; };
+		BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */; };
+		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
 		BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD622BF90B6200C208B1 /* ContentView.swift */; };
 		BFFCDD652BF90B6400C208B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFCDD642BF90B6400C208B1 /* Assets.xcassets */; };
 		BFFCDD682BF90B6400C208B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFCDD672BF90B6400C208B1 /* Preview Assets.xcassets */; };
-		BFFCDD722BF9B9C400C208B1 /* ImageFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD712BF9B9C400C208B1 /* ImageFile.swift */; };
-		BFFCDD742BF9BA0100C208B1 /* ImageResizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD732BF9BA0100C208B1 /* ImageResizerViewModel.swift */; };
-		BFFCDD762BF9C48B00C208B1 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD752BF9C48B00C208B1 /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BFD38EC22C0784E300E1285D /* DevicesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesButtons.swift; sourceTree = "<group>"; };
-		BFD38EC42C07857100E1285D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		BFD38EC62C07893600E1285D /* DeviceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTypes.swift; sourceTree = "<group>"; };
+		BF10C2EB2C16F69600C567A3 /* PreShotsAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PreShotsAPI; sourceTree = "<group>"; };
+		BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulseIpadExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF10C2F82C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPulseIpadExtensionApp.swift; sourceTree = "<group>"; };
+		BF10C2FA2C174FAE00C567A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicPulseIpadExtension.entitlements; sourceTree = "<group>"; };
+		BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BFFCDD5D2BF90B6200C208B1 /* PreShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreShotsApp.swift; sourceTree = "<group>"; };
 		BFFCDD622BF90B6200C208B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFFCDD642BF90B6400C208B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFFCDD672BF90B6400C208B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BFFCDD692BF90B6400C208B1 /* PreShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PreShots.entitlements; sourceTree = "<group>"; };
-		BFFCDD712BF9B9C400C208B1 /* ImageFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFile.swift; sourceTree = "<group>"; };
-		BFFCDD732BF9BA0100C208B1 /* ImageResizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResizerViewModel.swift; sourceTree = "<group>"; };
-		BFFCDD752BF9C48B00C208B1 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BF10C2F32C174FAE00C567A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFFCDD5A2BF90B6200C208B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
+				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF10C2EC2C16FD8100C567A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF10C2F72C174FAE00C567A3 /* PicPulseIpadExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BF10C2F82C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift */,
+				BF10C2FA2C174FAE00C567A3 /* ContentView.swift */,
+				BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */,
+				BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */,
+				BF10C2FF2C174FAF00C567A3 /* Preview Content */,
+			);
+			path = PicPulseIpadExtension;
+			sourceTree = "<group>";
+		};
+		BF10C2FF2C174FAF00C567A3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		BFFCDD542BF90B6200C208B1 = {
 			isa = PBXGroup;
 			children = (
+				BF10C2EB2C16F69600C567A3 /* PreShotsAPI */,
 				BFFCDD5F2BF90B6200C208B1 /* PreShots */,
+				BF10C2F72C174FAE00C567A3 /* PicPulseIpadExtension */,
 				BFFCDD5E2BF90B6200C208B1 /* Products */,
+				BF10C2EC2C16FD8100C567A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BFFCDD5D2BF90B6200C208B1 /* PreShots.app */,
+				BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,12 +109,6 @@
 			children = (
 				BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */,
 				BFFCDD622BF90B6200C208B1 /* ContentView.swift */,
-				BFD38EC42C07857100E1285D /* ImageCell.swift */,
-				BFD38EC22C0784E300E1285D /* DevicesButtons.swift */,
-				BFFCDD732BF9BA0100C208B1 /* ImageResizerViewModel.swift */,
-				BFFCDD752BF9C48B00C208B1 /* ViewState.swift */,
-				BFFCDD712BF9B9C400C208B1 /* ImageFile.swift */,
-				BFD38EC62C07893600E1285D /* DeviceTypes.swift */,
 				BFFCDD642BF90B6400C208B1 /* Assets.xcassets */,
 				BFFCDD692BF90B6400C208B1 /* PreShots.entitlements */,
 				BFFCDD662BF90B6400C208B1 /* Preview Content */,
@@ -90,6 +127,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BF10C2F52C174FAE00C567A3 /* PicPulseIpadExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulseIpadExtension" */;
+			buildPhases = (
+				BF10C2F22C174FAE00C567A3 /* Sources */,
+				BF10C2F32C174FAE00C567A3 /* Frameworks */,
+				BF10C2F42C174FAE00C567A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PicPulseIpadExtension;
+			packageProductDependencies = (
+				BF10C3072C174FFA00C567A3 /* ImportImagesFeature */,
+			);
+			productName = PicPulseIpadExtension;
+			productReference = BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */;
+			productType = "com.apple.product-type.application";
+		};
 		BFFCDD5C2BF90B6200C208B1 /* PreShots */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFFCDD6C2BF90B6400C208B1 /* Build configuration list for PBXNativeTarget "PreShots" */;
@@ -103,6 +160,10 @@
 			dependencies = (
 			);
 			name = PreShots;
+			packageProductDependencies = (
+				BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */,
+				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
+			);
 			productName = PreShots;
 			productReference = BFFCDD5D2BF90B6200C208B1 /* PreShots.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +178,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					BF10C2F52C174FAE00C567A3 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					BFFCDD5C2BF90B6200C208B1 = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -136,11 +200,21 @@
 			projectRoot = "";
 			targets = (
 				BFFCDD5C2BF90B6200C208B1 /* PreShots */,
+				BF10C2F52C174FAE00C567A3 /* PicPulseIpadExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BF10C2F42C174FAE00C567A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */,
+				BF10C2FD2C174FAF00C567A3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFFCDD5B2BF90B6200C208B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,17 +227,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BF10C2F22C174FAE00C567A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF10C2FB2C174FAE00C567A3 /* ContentView.swift in Sources */,
+				BF10C2F92C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFFCDD592BF90B6200C208B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFFCDD722BF9B9C400C208B1 /* ImageFile.swift in Sources */,
-				BFD38EC72C07893600E1285D /* DeviceTypes.swift in Sources */,
-				BFFCDD742BF9BA0100C208B1 /* ImageResizerViewModel.swift in Sources */,
-				BFFCDD762BF9C48B00C208B1 /* ViewState.swift in Sources */,
-				BFD38EC32C0784E300E1285D /* DevicesButtons.swift in Sources */,
 				BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */,
-				BFD38EC52C07857100E1285D /* ImageCell.swift in Sources */,
 				BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +248,82 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		BF10C3022C174FAF00C567A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicPulseIpadExtension/PicPulseIpadExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PicPulseIpadExtension/Preview Content\"";
+				DEVELOPMENT_TEAM = N492VC6PS9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulseIpadExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BF10C3032C174FAF00C567A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PicPulseIpadExtension/PicPulseIpadExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PicPulseIpadExtension/Preview Content\"";
+				DEVELOPMENT_TEAM = N492VC6PS9;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulseIpadExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		BFFCDD6A2BF90B6400C208B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -350,6 +503,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulseIpadExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF10C3022C174FAF00C567A3 /* Debug */,
+				BF10C3032C174FAF00C567A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BFFCDD582BF90B6200C208B1 /* Build configuration list for PBXProject "PreShots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -369,6 +531,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImportImagesFeature;
+		};
+		BF10C2F02C17023600C567A3 /* ImageResizeFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageResizeFeature;
+		};
+		BF10C3072C174FFA00C567A3 /* ImportImagesFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImportImagesFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFFCDD552BF90B6200C208B1 /* Project object */;
 }

@@ -13,5 +13,6 @@ struct PreShotsApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(.hiddenTitleBar)
     }
 }

@@ -6,27 +6,35 @@
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<data>
-		Tvm5vaa5KPoE4ksFPY2daVGee1c=
+		R1a9W80TuP2AFHA0LpLUkAO4PJ0=
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		Q/8EeylaKWMsTx4xd86ceWzEaSs=
+		MDkpDTFkgU2/iE65b4sIZw2J3gg=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Resources/AppIcon.icns</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			R1a9W80TuP2AFHA0LpLUkAO4PJ0=
+			</data>
 			<key>hash2</key>
 			<data>
-			NTPPRIiVX7g5Mwyn0/VAEYhXGugh40B+adDRKqPJyX8=
+			QvHN04xofoVloa+Vf4k6+UHC95UeJfgVZ9l8cDwhgdM=
 			</data>
 		</dict>
 		<key>Resources/Assets.car</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			MDkpDTFkgU2/iE65b4sIZw2J3gg=
+			</data>
 			<key>hash2</key>
 			<data>
-			Cp8qYX581vfikDVFQpdxLrTfng6kCc93OMb1lpSVyws=
+			oEu47ITUc3F05z4Ed92rngnoMMUemRYD3DdBhtzjbMk=
 			</data>
 		</dict>
 	</dict>
