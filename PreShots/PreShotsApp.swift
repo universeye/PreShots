@@ -14,5 +14,6 @@ struct PreShotsApp: App {
             ContentView()
         }
         .windowStyle(.hiddenTitleBar)
+        .defaultSize(width: 800, height: 600)
     }
 }

@@ -7,3 +7,5 @@ fastlane/README.md
 Gemfile
 Gemfile.lock
 PreShots.pkg
+PreShots.xcodeproj/project.xcworkspace/xcuserdata/terrykuo.xcuserdatad/UserInterfaceState.xcuserstate
+.DS_Store

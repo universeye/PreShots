@@ -46,6 +46,7 @@ public struct ImagesGridView: View {
                 }) {
                     Text("Add Images")
                 }
+                .keyboardShortcut("+", modifiers: [.command])
 #elseif os(iOS)
                 Button {
                     isShowing.toggle()

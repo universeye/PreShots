@@ -18,7 +18,8 @@ struct ContentView: View {
             ControlPanel(importerViewModel: viewModel)
         }
         .padding()
-        .frame(minWidth: 500)
+        .frame(minWidth: 500, minHeight: 500)
+        
     }
 }
 

@@ -52,15 +52,25 @@ public struct ControlPanel: View {
                     }) {
                         HStack {
                             Text("Set Destination Folder")
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundStyle(.green)
+                            if let _ = viewModel.downloadsFolderUrl {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundStyle(.green)
+                            }
                         }
                     }
-                    
+                    HStack {
                     if let downloadsFolderUrl = viewModel.downloadsFolderUrl {
-                        Text("\(downloadsFolderUrl.absoluteString)")
+                            Text("\(downloadsFolderUrl.absoluteString)")
+
                     } else {
                         Text("\(FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!)")
+                    }
+                        Button {
+                            openFolder(url:  viewModel.downloadsFolderUrl ?? FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!)
+                        } label: {
+                            Image(systemName: "arrowshape.right.circle.fill")
+                        }
+
                     }
                 }
                 HStack {
@@ -81,6 +91,7 @@ public struct ControlPanel: View {
                             .clipShape(.rect(cornerRadius: 13))
                     } else {
                         Button(action: {
+//                            viewModel.requestDownloadsFolderPermission()
                             viewModel.resizeAndSaveImages(images: importerViewModel.images)
                         }) {
                             Text("Resize and Save Images")
@@ -96,6 +107,14 @@ public struct ControlPanel: View {
                 }
             }
             Spacer()
+        }
+    }
+    
+    func openFolder(url: URL) {
+        if NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: url.path) {
+            print("Successfully opened the folder.")
+        } else {
+            print("Failed to open the folder.")
         }
     }
 }
