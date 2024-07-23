@@ -39,6 +39,6 @@ let package = Package(
             dependencies: ["Models", "ImportImagesFeature"]),
         .testTarget(
             name: "PreShotsAPITests",
-            dependencies: ["PreShotsAPI"]),
+            dependencies: ["ImageResizeFeature", "Models"]),
     ]
 )
