@@ -28,6 +28,7 @@
 		BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicPulseIpadExtension.entitlements; sourceTree = "<group>"; };
 		BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF6384F32C50B71500AC365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BFFCDD5D2BF90B6200C208B1 /* PreShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreShotsApp.swift; sourceTree = "<group>"; };
 		BFFCDD622BF90B6200C208B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		BFFCDD5F2BF90B6200C208B1 /* PreShots */ = {
 			isa = PBXGroup;
 			children = (
+				BF6384F32C50B71500AC365E /* Info.plist */,
 				BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */,
 				BFFCDD622BF90B6200C208B1 /* ContentView.swift */,
 				BFFCDD642BF90B6400C208B1 /* Assets.xcassets */,
@@ -456,6 +458,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PreShots/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Allow us to saves to downloads folder";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -485,6 +488,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PreShots/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSDownloadsFolderUsageDescription = "Allow us to saves to downloads folder";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

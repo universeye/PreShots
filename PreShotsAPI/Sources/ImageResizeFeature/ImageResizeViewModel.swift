@@ -13,7 +13,7 @@ class ImageResizeViewModel: ObservableObject {
     @Published var outputState: ViewState = .idle
     @Published var resizedWidth: CGFloat = 1290
     @Published var resizedHeight: CGFloat = 2796
-    @Published var downloadsFolderUrl: URL?
+    
     
     func swapWidthHeight() {
         let tempWidth = resizedHeight
@@ -90,7 +90,7 @@ class ImageResizeViewModel: ObservableObject {
             return
         }
         var downloadsDirectory: URL
-        if let downloadsFolderUrl = downloadsFolderUrl {
+        if let downloadsFolderUrl = DestinationFolderManager.shared.accessSavedFolder() {
             downloadsDirectory = downloadsFolderUrl
         } else {
             downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
@@ -106,18 +106,7 @@ class ImageResizeViewModel: ObservableObject {
         }
     }
     
-    func requestDownloadsFolderPermission() {
-        let dialog = NSOpenPanel()
-        
-        dialog.title = "Select Downloads Folder"
-        dialog.canChooseFiles = false
-        dialog.canChooseDirectories = true
-        dialog.allowsMultipleSelection = false
-        
-        if dialog.runModal() == NSApplication.ModalResponse.OK {
-            downloadsFolderUrl = dialog.url
-        }
-    }
+   
     
     func setDeviceSize(device: DeviceTypes) {
         self.resizedWidth = device.width

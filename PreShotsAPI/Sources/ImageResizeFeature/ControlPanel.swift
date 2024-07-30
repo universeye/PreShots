@@ -11,6 +11,7 @@ import ImportImagesFeature
 public struct ControlPanel: View {
     @ObservedObject var importerViewModel: ImageImporterViewModel
     @StateObject private var viewModel = ImageResizeViewModel()
+    @State private var destinationURLString: String = ""
     
     public init(importerViewModel: ImageImporterViewModel) {
         self.importerViewModel = importerViewModel
@@ -35,7 +36,7 @@ public struct ControlPanel: View {
                     } label: {
                         Image(systemName: "arrow.left.arrow.right")
                     }
-
+                    
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Height(px): ")
                         TextField("Height", value: $viewModel.resizedHeight, formatter: NumberFormatter())
@@ -44,41 +45,49 @@ public struct ControlPanel: View {
                     .background()
                     .clipShape(.rect(cornerRadius: 5))
                     .padding(.vertical, 8)
-                    //.padding()
                 }
                 HStack {
                     Button(action: {
-                        viewModel.requestDownloadsFolderPermission()
+                        DestinationFolderManager.shared.requestDownloadsFolderPermission()
+                        if let downloadsFolderUrl =  DestinationFolderManager.shared.accessSavedFolder() {
+                            withAnimation {
+                                self.destinationURLString = downloadsFolderUrl.absoluteString
+                            }
+                            
+                        }
                     }) {
                         HStack {
                             Text("Set Destination Folder")
-                            if let _ = viewModel.downloadsFolderUrl {
+                            if let _ =  DestinationFolderManager.shared.accessSavedFolder() {
                                 Image(systemName: "checkmark.circle.fill")
                                     .foregroundStyle(.green)
                             }
                         }
                     }
                     HStack {
-                    if let downloadsFolderUrl = viewModel.downloadsFolderUrl {
-                            Text("\(downloadsFolderUrl.absoluteString)")
-
-                    } else {
-                        Text("\(FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!)")
-                    }
-                        Button {
-                            openFolder(url:  viewModel.downloadsFolderUrl ?? FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!)
-                        } label: {
-                            Image(systemName: "arrowshape.right.circle.fill")
+                        Text(destinationURLString)
+                        
+                        if let _ =  DestinationFolderManager.shared.accessSavedFolder() {
+                            Button {
+                                DestinationFolderManager.shared.openFolder()
+                            } label: {
+                                Image(systemName: "arrowshape.right.circle.fill")
+                            }
                         }
-
                     }
+                    .onAppear {
+                        if let downloadsFolderUrl =  DestinationFolderManager.shared.accessSavedFolder() {
+                            self.destinationURLString = downloadsFolderUrl.absoluteString
+                        }
+                    }
+                    
                 }
                 HStack {
                     if viewModel.outputState == .loading {
                         ProgressView()
                             .progressViewStyle(.linear)
                     }
-                   
+                    
                     Spacer()
                     if viewModel.outputState == .loading {
                         ProgressView()
@@ -86,23 +95,25 @@ public struct ControlPanel: View {
                         Label("Success!", systemImage: "checkmark.circle.fill")
                             .font(.system(size: 14, weight: .bold))
                             .padding()
+                            .foregroundStyle(.white)
                             .frame(width: 200, height: 50)
                             .background(.blue.gradient)
                             .clipShape(.rect(cornerRadius: 13))
                     } else {
                         Button(action: {
-//                            viewModel.requestDownloadsFolderPermission()
                             viewModel.resizeAndSaveImages(images: importerViewModel.images)
                         }) {
                             Text("Resize and Save Images")
                                 .font(.system(size: 14, weight: .bold))
                                 .padding()
+                                .foregroundStyle(.white)
                                 .frame(width: 200, height: 50)
                                 .background(.blue.gradient)
                                 .clipShape(.rect(cornerRadius: 13))
                             
                         }
                         .buttonStyle(.plain)
+                        .disabled(importerViewModel.images.isEmpty)
                     }
                 }
             }
@@ -110,13 +121,7 @@ public struct ControlPanel: View {
         }
     }
     
-    func openFolder(url: URL) {
-        if NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: url.path) {
-            print("Successfully opened the folder.")
-        } else {
-            print("Failed to open the folder.")
-        }
-    }
+    
 }
 
 #Preview {

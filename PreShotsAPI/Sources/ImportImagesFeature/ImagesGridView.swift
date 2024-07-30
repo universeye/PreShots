@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import Models
 
 public struct ImagesGridView: View {
     @ObservedObject var viewModel: ImageImporterViewModel
@@ -91,13 +92,13 @@ public struct ImagesGridView: View {
                     HStack(spacing: isHoverOverEmpty ? 30 : 20) {
                         Image(systemName: isHoverOverEmpty ? "photo.badge.plus.fill" : "photo.fill")
                             .font(.system(size: 50))
-                            .foregroundStyle(.white.opacity(0.5))
+                            .foregroundStyle(.primary.opacity(0.5))
                             .rotationEffect(.degrees(isHoverOverEmpty ? -12 : -10))
                             .scaleEffect(isHoverOverEmpty ? 1.2 : 1.0)
                             .animation(.spring(duration: 0.3), value: isHoverOverEmpty)
                         Image(systemName: isHoverOverEmpty ? "photo.badge.plus.fill" : "photo.fill")
                             .font(.system(size: 50))
-                            .foregroundStyle(.white.opacity(0.5))
+                            .foregroundStyle(.primary.opacity(0.5))
                             .rotationEffect(.degrees(isHoverOverEmpty ? 22 : 20))
                             .scaleEffect(isHoverOverEmpty ? 1.2 : 1.0)
                             .animation(.spring(duration: 0.2), value: isHoverOverEmpty)
@@ -105,7 +106,7 @@ public struct ImagesGridView: View {
                     Text("Add images or drop them here")
                         .font(.system(size: 15))
                         .bold()
-                        .foregroundStyle(.white.opacity(0.5))
+                        .foregroundStyle(.primary.opacity(0.5))
                         .animation(.easeInOut(duration: 0.2), value: isHoverOverEmpty)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -113,7 +114,7 @@ public struct ImagesGridView: View {
                 .clipShape(.rect(cornerRadius: 10))
                 .overlay {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(.white.opacity(0.5), lineWidth: 0.7)
+                        .stroke(.primary.opacity(0.5), lineWidth: 0.7)
                 }
                 .overlay {
                     Rectangle()
