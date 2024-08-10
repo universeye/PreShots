@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import RevenueCat
 
 @main
 struct PreShotsApp: App {
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: APIKey.revenueCatId)
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
-        .windowStyle(.hiddenTitleBar)
         .defaultSize(width: 800, height: 600)
     }
 }

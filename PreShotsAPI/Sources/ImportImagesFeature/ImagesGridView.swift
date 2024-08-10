@@ -78,7 +78,10 @@ public struct ImagesGridView: View {
                             .foregroundStyle(.red)
                     }
                 }
+                Spacer()
             }
+            .frame(maxWidth: .infinity)
+
         }
     }
     
@@ -134,7 +137,6 @@ public struct ImagesGridView: View {
 #endif
                 }
                 .onHover { hover in
-                    print("Mouse hover: \(hover)")
                     self.isHoverOverEmpty = hover
                 }
             }

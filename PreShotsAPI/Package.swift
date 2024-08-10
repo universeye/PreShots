@@ -24,6 +24,9 @@ let package = Package(
             name: "ImageResizeFeature",
             targets: ["ImageResizeFeature"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/RevenueCat/purchases-ios.git", from: "5.2.2")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -36,7 +39,7 @@ let package = Package(
             name: "Models"),
         .target(
             name: "ImageResizeFeature",
-            dependencies: ["Models", "ImportImagesFeature"]),
+            dependencies: ["Models", "ImportImagesFeature", .product(name: "RevenueCat", package: "purchases-ios")]),
         .testTarget(
             name: "PreShotsAPITests",
             dependencies: ["ImageResizeFeature", "Models"]),

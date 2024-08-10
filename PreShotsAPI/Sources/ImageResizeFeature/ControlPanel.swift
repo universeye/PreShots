@@ -13,6 +13,7 @@ public struct ControlPanel: View {
     @StateObject private var viewModel = ImageResizeViewModel()
     @State private var destinationURLString: String = ""
     
+    
     public init(importerViewModel: ImageImporterViewModel) {
         self.importerViewModel = importerViewModel
     }
@@ -116,6 +117,9 @@ public struct ControlPanel: View {
                         .disabled(importerViewModel.images.isEmpty)
                     }
                 }
+                
+                Divider()
+                    .padding(.top)
             }
             Spacer()
         }
@@ -126,4 +130,5 @@ public struct ControlPanel: View {
 
 #Preview {
     ControlPanel(importerViewModel: ImageImporterViewModel())
+        .padding()
 }

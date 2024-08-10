@@ -10,3 +10,4 @@ PreShots.pkg
 PreShots.xcodeproj/project.xcworkspace/xcuserdata/terrykuo.xcuserdatad/UserInterfaceState.xcuserstate
 .DS_Store
 PreShots.app/Contents/_MASReceipt/receipt
+PreShots/APIKey.swift
