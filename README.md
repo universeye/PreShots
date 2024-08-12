@@ -6,9 +6,10 @@
 ![](https://img.shields.io/badge/Platform-macOS_14.0+-blue?color=007bff)
 ![](https://img.shields.io/badge/UI-SwiftUI-green)
 ![](https://img.shields.io/badge/License-MIT-orange)
-![](https://badgen.net/github/release/universeye/PreShots)
+![](https://badgen.net/github/releases/universeye/PreShots)
 
 <!---
+https://github.com/universeye/PreShots/releases
 ![](https://badgen.net/github/last-commit/universeye/PreShots)
 ![](https://badgen.net/github/commits/universeye/PreShots)
 ![](https://badgen.net/badge/:platform/:status/:color?icon=github)
@@ -38,7 +39,20 @@ Free & Open Source
 ## Note
 
 * iPad support is still in development
-* Please add your own RevenueCat API key
+* This app includes tips system built with RevenueCat, please replce `YOUR_OWN_API_KEY` with your own RevenueCat API key
+  
+```
+@main
+struct PreShotsApp: App {
+    
+    init() {
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "YOUR_OWN_API_KEY")
+    }
+
+    ...
+}
+```
 
 ## Welcome to pull requests for these
 
