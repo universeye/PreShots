@@ -23,7 +23,7 @@ Free & Open Source
 
 # Download
 
-[Download on the App Store](https://apps.apple.com/tw/app/picpulse-batch-images-resizer/id6503602987?mt=12)
+[Download on the App Store](https://apps.apple.com/tw/app/picpulse-batch-images-resizer/id6503602987?mt=12) or manually download it in the [release](https://github.com/universeye/PreShots/releases) page
 
 # Screenshots
 
