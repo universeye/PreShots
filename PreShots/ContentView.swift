@@ -9,6 +9,8 @@ import SwiftUI
 import ImportImagesFeature
 import ImageResizeFeature
 import RevenueCat
+import AutoUpdates
+import AppKit
 
 struct ContentView: View {
     @StateObject private var viewModel = ImageImporterViewModel()
@@ -30,20 +32,20 @@ struct ContentView: View {
                 Divider()
                     .frame(height: 25)
                 
-                ShareLink("Share", item: "")
+                ShareLink("Share", item: Links.getLink(link: .shareApp)!.absoluteString)
                     .buttonStyle(.link)
                 
                 Divider()
                     .frame(height: 25)
                 
-                Link(destination: URL(string: "https://apps.apple.com/app/id1624452493")!, label: {
+                Link(destination: Links.getLink(link: .rateAppStore)!, label: {
                     Label("Rate PicPulse", systemImage: "star.fill")
                 })
                 
                 Divider()
                     .frame(height: 25)
                 
-                Link(destination: URL(string: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://apps.apple.com/by/developer/tai-yu-kuo/id1585922485&ved=2ahUKEwjtm_3f0NqHAxV0b_UHHQdJPXQQFnoECBkQAQ&usg=AOvVaw37KxYmIROxj8fwoQgPx5tx")!, label: {
+                Link(destination: Links.getLink(link: .myOtherApps)!, label: {
                     Label("See my other apps", systemImage: "apps.iphone")
                 })
             }
@@ -51,7 +53,25 @@ struct ContentView: View {
             .sheet(isPresented: $isPresentTipSheet, content: {
                 TipsListView(isPresentTipSheet: $isPresentTipSheet)
             })
-           
+            
+            if let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                HStack {
+                    Text("PicPulse v\(currentVersion)")
+                        .foregroundStyle(.gray)
+                        .font(.footnote)
+                    Button {
+                        Updater.shared.checkForUpdates(withAlert: true)
+                    } label: {
+                        Text("Check for updates")
+                            .font(.footnote)
+                    }
+                    .buttonStyle(.link)
+                    
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+            }
+            
             Text("ⓒ 2024 universeye, designed & developed in Taipei, Taiwan")
                 .foregroundStyle(.gray)
                 .font(.footnote)
@@ -61,6 +81,9 @@ struct ContentView: View {
         }
         .padding()
         .frame(minWidth: 1000, minHeight: 800)
+        .onFirstAppear {
+            Updater.shared.checkForUpdates()
+        }
     }
 }
 

@@ -23,6 +23,9 @@ let package = Package(
         .library(
             name: "ImageResizeFeature",
             targets: ["ImageResizeFeature"]),
+        .library(
+            name: "AutoUpdates",
+            targets: ["AutoUpdates"]),
     ],
     dependencies: [
         .package(url: "https://github.com/RevenueCat/purchases-ios.git", from: "5.2.2")
@@ -40,6 +43,8 @@ let package = Package(
         .target(
             name: "ImageResizeFeature",
             dependencies: ["Models", "ImportImagesFeature", .product(name: "RevenueCat", package: "purchases-ios")]),
+        .target(
+            name: "AutoUpdates"),
         .testTarget(
             name: "PreShotsAPITests",
             dependencies: ["ImageResizeFeature", "Models"]),

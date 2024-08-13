@@ -16,6 +16,10 @@
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BF59A11F2C5FE97300C87C0E /* RevenueCat */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
+		BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */ = {isa = PBXBuildFile; productRef = BF6206982C6AF41B0001B151 /* AutoUpdates */; };
+		BF62069B2C6AFE830001B151 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069A2C6AFE830001B151 /* Links.swift */; };
+		BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */; };
+		BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069E2C6AFF7D0001B151 /* View+Ext.swift */; };
 		BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7245342C60F33F00804A93 /* TipsListView.swift */; };
 		BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38C802C5FD1DC00525EF9 /* APIKey.swift */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
@@ -33,6 +37,9 @@
 		BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicPulseIpadExtension.entitlements; sourceTree = "<group>"; };
 		BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF59A1212C60B02300C87C0E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BF62069A2C6AFE830001B151 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnAppearModifier.swift; sourceTree = "<group>"; };
+		BF62069E2C6AFF7D0001B151 /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		BF6384F32C50B71500AC365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BF7245342C60F33F00804A93 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		BFD38C802C5FD1DC00525EF9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -60,6 +67,7 @@
 				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 				BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */,
+				BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +130,10 @@
 				BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */,
 				BFFCDD622BF90B6200C208B1 /* ContentView.swift */,
 				BFD38C802C5FD1DC00525EF9 /* APIKey.swift */,
+				BF62069A2C6AFE830001B151 /* Links.swift */,
 				BF7245342C60F33F00804A93 /* TipsListView.swift */,
+				BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */,
+				BF62069E2C6AFF7D0001B151 /* View+Ext.swift */,
 				BFFCDD642BF90B6400C208B1 /* Assets.xcassets */,
 				BFFCDD692BF90B6400C208B1 /* PreShots.entitlements */,
 				BFFCDD662BF90B6400C208B1 /* Preview Content */,
@@ -178,6 +189,7 @@
 				BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */,
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
 				BF59A11F2C5FE97300C87C0E /* RevenueCat */,
+				BF6206982C6AF41B0001B151 /* AutoUpdates */,
 			);
 			productName = PreShots;
 			productReference = BFFCDD5D2BF90B6200C208B1 /* PreShots.app */;
@@ -258,7 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */,
+				BF62069B2C6AFE830001B151 /* Links.swift in Sources */,
 				BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */,
+				BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */,
 				BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */,
 				BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */,
 				BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */,
@@ -486,7 +501,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -518,7 +533,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -586,6 +601,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF59A11E2C5FE96400C87C0E /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
+		};
+		BF6206982C6AF41B0001B151 /* AutoUpdates */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AutoUpdates;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

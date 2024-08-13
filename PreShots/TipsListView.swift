@@ -20,11 +20,11 @@ struct TipsListView: View {
                 .padding()
           
             HStack {
-                Button {
-                    isShowDebug.toggle()
-                } label: {
-                    Text("Show Debug")
-                }
+//                Button {
+//                    isShowDebug.toggle()
+//                } label: {
+//                    Text("Show Debug")
+//                }
                 
                 Button {
                     isPresentTipSheet.toggle()
@@ -33,7 +33,7 @@ struct TipsListView: View {
                 }
             }
             .padding(.bottom)
-            .debugRevenueCatOverlay(isPresented: $isShowDebug)
+//            .debugRevenueCatOverlay(isPresented: $isShowDebug)
             .onAppear {
                 Task {
                     do {
