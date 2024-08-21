@@ -8,13 +8,13 @@
 import Foundation
 import Cocoa
 
-class DestinationFolderManager {
-    static let shared = DestinationFolderManager()
+public class DestinationFolderManager {
+    public static let shared = DestinationFolderManager()
     private let defaults = UserDefaults.standard
     private let folderKey = "DestinationFolder"
     private let bookmarkKey = "DestinationFolderBookmark"
     
-    private init() {}
+    public init() {}
     
     func saveDestinationFolder(_ url: URL) {
         defaults.set(url.path, forKey: folderKey)
@@ -29,7 +29,7 @@ class DestinationFolderManager {
         defaults.removeObject(forKey: folderKey)
     }
     
-    func requestDownloadsFolderPermission() {
+    public func requestDownloadsFolderPermission() {
         let dialog = NSOpenPanel()
         
         dialog.title = "Select Downloads Folder"
@@ -44,7 +44,7 @@ class DestinationFolderManager {
         }
     }
     
-    func openFolder() {
+    public func openFolder() {
         if let url = accessSavedFolder() {
             if NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: url.path) {
                 print("Successfully opened the folder with \(url).")
@@ -68,7 +68,7 @@ class DestinationFolderManager {
         }
     }
     
-    func accessSavedFolder() -> URL? {
+    public func accessSavedFolder() -> URL? {
         guard let bookmarkData = defaults.data(forKey: bookmarkKey) else {
             return nil
         }

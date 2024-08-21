@@ -9,8 +9,7 @@ let package = Package(
         .macOS(.v14),
         .iOS(.v17)
     ],
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
+    products: [        
         .library(
             name: "PreShotsAPI",
             targets: ["PreShotsAPI"]),
@@ -26,13 +25,17 @@ let package = Package(
         .library(
             name: "AutoUpdates",
             targets: ["AutoUpdates"]),
+        .library(
+            name: "ImagesSetsFeature",
+            targets: ["ImagesSetsFeature"]),
+        .library(
+            name: "DestinationManager",
+            targets: ["DestinationManager"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/RevenueCat/purchases-ios.git", from: "5.2.2")
-    ],
+//    dependencies: [
+//        .package(url: "https://github.com/RevenueCat/purchases-ios.git", from: "5.2.2")
+//    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "PreShotsAPI"),
         .target(
@@ -42,9 +45,14 @@ let package = Package(
             name: "Models"),
         .target(
             name: "ImageResizeFeature",
-            dependencies: ["Models", "ImportImagesFeature", .product(name: "RevenueCat", package: "purchases-ios")]),
+            dependencies: ["Models", "DestinationManager", "ImportImagesFeature"/*, .product(name: "RevenueCat", package: "purchases-ios")*/]),
         .target(
             name: "AutoUpdates"),
+        .target(
+            name: "ImagesSetsFeature",
+            dependencies: ["DestinationManager", "Models"]),
+        .target(
+            name: "DestinationManager"),
         .testTarget(
             name: "PreShotsAPITests",
             dependencies: ["ImageResizeFeature", "Models"]),

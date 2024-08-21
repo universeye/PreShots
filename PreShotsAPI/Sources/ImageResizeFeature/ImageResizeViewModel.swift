@@ -8,6 +8,7 @@
 import SwiftUI
 import Models
 import AppKit
+import DestinationManager
 
 class ImageResizeViewModel: ObservableObject {
     @Published var outputState: ViewState = .idle
@@ -23,7 +24,7 @@ class ImageResizeViewModel: ObservableObject {
     
     
     @MainActor
-    func resizeAndSaveImages(images: [ImageFile]) {
+    func resizeAndSaveImages(images: [ImageFile], onSuccess: @escaping () -> Void) {
         guard !images.isEmpty else { return }
         withAnimation {
             outputState = .loading
@@ -31,7 +32,7 @@ class ImageResizeViewModel: ObservableObject {
         
         let myGroup = DispatchGroup()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             for imageFile in images {
                 myGroup.enter()
                 if let resizedImage = self.resizeImage(image: imageFile.image, width: self.resizedWidth, height: self.resizedHeight) {
@@ -44,6 +45,7 @@ class ImageResizeViewModel: ObservableObject {
                 print("Finished all requests.")
                 withAnimation {
                     self.outputState = .success
+                    onSuccess()
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

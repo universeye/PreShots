@@ -107,6 +107,7 @@ public struct ImagesGridView: View {
                             .animation(.spring(duration: 0.2), value: isHoverOverEmpty)
                     }
                     Text("Add images or drop them here")
+                        .monospaced()
                         .font(.system(size: 15))
                         .bold()
                         .foregroundStyle(.primary.opacity(0.5))

@@ -21,5 +21,14 @@ struct PreShotsApp: App {
             ContentView()
         }
         .defaultSize(width: 800, height: 600)
+        
+        Settings {
+            TabView {
+                GeneralSettingsView()
+                    .tabItem { Label("Settings", systemImage: "gearshape") }
+            }
+            
+        }
+        .defaultSize(width: 600, height: 800)
     }
 }

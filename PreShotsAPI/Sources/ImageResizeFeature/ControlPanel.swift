@@ -7,11 +7,12 @@
 
 import SwiftUI
 import ImportImagesFeature
+import DestinationManager
 
 public struct ControlPanel: View {
     @ObservedObject var importerViewModel: ImageImporterViewModel
     @StateObject private var viewModel = ImageResizeViewModel()
-    @State private var destinationURLString: String = ""
+    private let defaults = UserDefaults.standard
     
     
     public init(importerViewModel: ImageImporterViewModel) {
@@ -47,42 +48,9 @@ public struct ControlPanel: View {
                     .clipShape(.rect(cornerRadius: 5))
                     .padding(.vertical, 8)
                 }
-                HStack {
-                    Button(action: {
-                        DestinationFolderManager.shared.requestDownloadsFolderPermission()
-                        if let downloadsFolderUrl =  DestinationFolderManager.shared.accessSavedFolder() {
-                            withAnimation {
-                                self.destinationURLString = downloadsFolderUrl.absoluteString
-                            }
-                            
-                        }
-                    }) {
-                        HStack {
-                            Text("Set Destination Folder")
-                            if let _ =  DestinationFolderManager.shared.accessSavedFolder() {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundStyle(.green)
-                            }
-                        }
-                    }
-                    HStack {
-                        Text(destinationURLString)
-                        
-                        if let _ =  DestinationFolderManager.shared.accessSavedFolder() {
-                            Button {
-                                DestinationFolderManager.shared.openFolder()
-                            } label: {
-                                Image(systemName: "arrowshape.right.circle.fill")
-                            }
-                        }
-                    }
-                    .onAppear {
-                        if let downloadsFolderUrl =  DestinationFolderManager.shared.accessSavedFolder() {
-                            self.destinationURLString = downloadsFolderUrl.absoluteString
-                        }
-                    }
-                    
-                }
+                
+                DestinationSetterButton()
+                
                 HStack {
                     if viewModel.outputState == .loading {
                         ProgressView()
@@ -102,7 +70,14 @@ public struct ControlPanel: View {
                             .clipShape(.rect(cornerRadius: 13))
                     } else {
                         Button(action: {
-                            viewModel.resizeAndSaveImages(images: importerViewModel.images)
+                            viewModel.resizeAndSaveImages(images: importerViewModel.images) {
+                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
+                                if isAutoDelete {
+                                    withAnimation {
+                                        importerViewModel.images = []
+                                    }
+                                }
+                            }
                         }) {
                             Text("Resize and Save Images")
                                 .font(.system(size: 14, weight: .bold))
@@ -116,6 +91,31 @@ public struct ControlPanel: View {
                         .buttonStyle(.plain)
                         .disabled(importerViewModel.images.isEmpty)
                     }
+                }
+                
+                switch viewModel.outputState {
+                case .error(let error):
+                    VStack {
+                        Text("Failed: \(error.localizedDescription)")
+                            .font(.footnote)
+                            .foregroundStyle(.red)
+                        Button {
+                            viewModel.resizeAndSaveImages(images: importerViewModel.images) {
+                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
+                                if isAutoDelete {
+                                    withAnimation {
+                                        importerViewModel.images = []
+                                    }
+                                }
+                            }
+                        } label: {
+                            Text("Try Again")
+                        }
+                        .buttonStyle(.link)
+
+                    }
+                default:
+                    EmptyView()
                 }
                 
                 Divider()

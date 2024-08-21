@@ -52,7 +52,15 @@ public class ImageImporterViewModel: ObservableObject {
                 if let nsImage = NSImage(contentsOf: url) {
                     let fileName = url.lastPathComponent
                     let (pixelWidth, pixelHeight) = self.getPixelDimensions(from: nsImage)
-                    images.append(ImageFile(image: nsImage, fileName: fileName, pixelWidth: pixelWidth, pixelHeight: pixelHeight))
+                    images.append(
+                        ImageFile(
+                            image: nsImage,
+                            fileName: fileName,
+                            fileURL: url,
+                            pixelWidth: pixelWidth,
+                            pixelHeight: pixelHeight
+                        )
+                    )
                 }
             }
         }
@@ -96,7 +104,14 @@ public class ImageImporterViewModel: ObservableObject {
                                 let fileName = "unknown"
                                 let (pixelWidth, pixelHeight) = self.getPixelDimensions(from: nsImage)
                                 DispatchQueue.main.async {
-                                    self.images.append(ImageFile(image: nsImage, fileName: fileName, pixelWidth: pixelWidth, pixelHeight: pixelHeight))
+                                    self.images.append(
+                                        ImageFile(
+                                            image: nsImage,
+                                            fileName: fileName,
+                                            pixelWidth: pixelWidth,
+                                            pixelHeight: pixelHeight
+                                        )
+                                    )
                                 }
                             }
                             #elseif os(iOS)
@@ -104,7 +119,14 @@ public class ImageImporterViewModel: ObservableObject {
                                 let fileName = "unknown"
                                 let (pixelWidth, pixelHeight) = self.getPixelDimensions(from: uiImage)
                                 DispatchQueue.main.async {
-                                    self.images.append(ImageFile(image: uiImage, fileName: fileName, pixelWidth: pixelWidth, pixelHeight: pixelHeight))
+                                    self.images.append(
+                                        ImageFile(
+                                            image: uiImage,
+                                            fileName: fileName,
+                                            pixelWidth: pixelWidth,
+                                            pixelHeight: pixelHeight
+                                        )
+                                    )
                                 }
                             }
                             #endif
@@ -114,7 +136,15 @@ public class ImageImporterViewModel: ObservableObject {
                                 let fileName = url.lastPathComponent
                                 let (pixelWidth, pixelHeight) = self.getPixelDimensions(from: nsImage)
                                 DispatchQueue.main.async {
-                                    self.images.append(ImageFile(image: nsImage, fileName: fileName, pixelWidth: pixelWidth, pixelHeight: pixelHeight))
+                                    self.images.append(
+                                        ImageFile(
+                                            image: nsImage,
+                                            fileName: fileName,
+                                            fileURL: url,
+                                            pixelWidth: pixelWidth,
+                                            pixelHeight: pixelHeight
+                                        )
+                                    )
                                 }
                             }
                             #elseif os(iOS)
@@ -122,7 +152,15 @@ public class ImageImporterViewModel: ObservableObject {
                                 let fileName = url.lastPathComponent
                                 let (pixelWidth, pixelHeight) = self.getPixelDimensions(from: uiImage)
                                 DispatchQueue.main.async {
-                                    self.images.append(ImageFile(image: uiImage, fileName: fileName, pixelWidth: pixelWidth, pixelHeight: pixelHeight))
+                                    self.images.append(
+                                        ImageFile(
+                                            image: uiImage,
+                                            fileName: fileName,
+                                            fileURL: url,
+                                            pixelWidth: pixelWidth,
+                                            pixelHeight: pixelHeight
+                                        )
+                                    )
                                 }
                             }
                             #endif

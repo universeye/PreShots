@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10B0762C73139400235D45 /* ImagesSetsFeature */; };
 		BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */; };
 		BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C2F02C17023600C567A3 /* ImageResizeFeature */; };
 		BF10C2F92C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10C2F82C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift */; };
@@ -14,6 +15,7 @@
 		BF10C2FD2C174FAF00C567A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */; };
 		BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */; };
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
+		BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */; };
 		BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BF59A11F2C5FE97300C87C0E /* RevenueCat */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
 		BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */ = {isa = PBXBuildFile; productRef = BF6206982C6AF41B0001B151 /* AutoUpdates */; };
@@ -36,6 +38,7 @@
 		BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicPulseIpadExtension.entitlements; sourceTree = "<group>"; };
 		BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		BF59A1212C60B02300C87C0E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BF62069A2C6AFE830001B151 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnAppearModifier.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 			files = (
 				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
+				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
 				BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */,
 				BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
@@ -134,6 +138,7 @@
 				BF7245342C60F33F00804A93 /* TipsListView.swift */,
 				BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */,
 				BF62069E2C6AFF7D0001B151 /* View+Ext.swift */,
+				BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */,
 				BFFCDD642BF90B6400C208B1 /* Assets.xcassets */,
 				BFFCDD692BF90B6400C208B1 /* PreShots.entitlements */,
 				BFFCDD662BF90B6400C208B1 /* Preview Content */,
@@ -190,6 +195,7 @@
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
 				BF59A11F2C5FE97300C87C0E /* RevenueCat */,
 				BF6206982C6AF41B0001B151 /* AutoUpdates */,
+				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
 			);
 			productName = PreShots;
 			productReference = BFFCDD5D2BF90B6200C208B1 /* PreShots.app */;
@@ -276,6 +282,7 @@
 				BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */,
 				BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */,
 				BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */,
+				BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */,
 				BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +492,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -501,7 +508,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -517,7 +524,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -533,7 +540,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -585,6 +592,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BF10B0762C73139400235D45 /* ImagesSetsFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImagesSetsFeature;
+		};
 		BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImportImagesFeature;
