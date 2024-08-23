@@ -26,7 +26,6 @@ struct GeneralSettingsView: View {
             .opacity(isShowWelcome ? 1 : 0)
             
             
-            
             Section {
 //                Toggle(isOn: $settingTwoValue, label: {
 //                    Label("Launch at login", systemImage: "desktopcomputer")

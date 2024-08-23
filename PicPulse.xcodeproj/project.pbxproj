@@ -16,13 +16,13 @@
 		BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */; };
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */; };
-		BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BF59A11F2C5FE97300C87C0E /* RevenueCat */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
 		BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */ = {isa = PBXBuildFile; productRef = BF6206982C6AF41B0001B151 /* AutoUpdates */; };
 		BF62069B2C6AFE830001B151 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069A2C6AFE830001B151 /* Links.swift */; };
 		BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */; };
 		BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069E2C6AFF7D0001B151 /* View+Ext.swift */; };
 		BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7245342C60F33F00804A93 /* TipsListView.swift */; };
+		BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BFC111C02C782B5D00470BE5 /* RevenueCat */; };
 		BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38C802C5FD1DC00525EF9 /* APIKey.swift */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
 		BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD622BF90B6200C208B1 /* ContentView.swift */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		BF10C2EB2C16F69600C567A3 /* PreShotsAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = PreShotsAPI; sourceTree = "<group>"; };
-		BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulseIpadExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF10C2F62C174FAE00C567A3 /* PicPulse2IpadExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulse2IpadExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF10C2F82C174FAE00C567A3 /* PicPulseIpadExtensionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPulseIpadExtensionApp.swift; sourceTree = "<group>"; };
 		BF10C2FA2C174FAE00C567A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF10C2FC2C174FAF00C567A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		BF6384F32C50B71500AC365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BF7245342C60F33F00804A93 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		BFD38C802C5FD1DC00525EF9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		BFFCDD5D2BF90B6200C208B1 /* PreShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreShotsApp.swift; sourceTree = "<group>"; };
 		BFFCDD622BF90B6200C208B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFFCDD642BF90B6400C208B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 			files = (
 				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
+				BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */,
 				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
-				BF59A1202C5FE97300C87C0E /* RevenueCat in Frameworks */,
 				BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
 			);
@@ -121,8 +121,8 @@
 		BFFCDD5E2BF90B6200C208B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFFCDD5D2BF90B6200C208B1 /* PreShots.app */,
-				BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */,
+				BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */,
+				BF10C2F62C174FAE00C567A3 /* PicPulse2IpadExtension.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF10C2F52C174FAE00C567A3 /* PicPulseIpadExtension */ = {
+		BF10C2F52C174FAE00C567A3 /* PicPulse2IpadExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulseIpadExtension" */;
+			buildConfigurationList = BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulse2IpadExtension" */;
 			buildPhases = (
 				BF10C2F22C174FAE00C567A3 /* Sources */,
 				BF10C2F32C174FAE00C567A3 /* Frameworks */,
@@ -169,12 +169,12 @@
 			);
 			dependencies = (
 			);
-			name = PicPulseIpadExtension;
+			name = PicPulse2IpadExtension;
 			packageProductDependencies = (
 				BF10C3072C174FFA00C567A3 /* ImportImagesFeature */,
 			);
 			productName = PicPulseIpadExtension;
-			productReference = BF10C2F62C174FAE00C567A3 /* PicPulseIpadExtension.app */;
+			productReference = BF10C2F62C174FAE00C567A3 /* PicPulse2IpadExtension.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BFFCDD5C2BF90B6200C208B1 /* PreShots */ = {
@@ -193,12 +193,12 @@
 			packageProductDependencies = (
 				BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */,
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
-				BF59A11F2C5FE97300C87C0E /* RevenueCat */,
 				BF6206982C6AF41B0001B151 /* AutoUpdates */,
 				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
+				BFC111C02C782B5D00470BE5 /* RevenueCat */,
 			);
 			productName = PreShots;
-			productReference = BFFCDD5D2BF90B6200C208B1 /* PreShots.app */;
+			productReference = BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +209,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1530;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					BF10C2F52C174FAE00C567A3 = {
 						CreatedOnToolsVersion = 15.3;
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BFFCDD582BF90B6200C208B1 /* Build configuration list for PBXProject "PreShots" */;
+			buildConfigurationList = BFFCDD582BF90B6200C208B1 /* Build configuration list for PBXProject "PicPulse" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -229,14 +229,14 @@
 			);
 			mainGroup = BFFCDD542BF90B6200C208B1;
 			packageReferences = (
-				BF59A11E2C5FE96400C87C0E /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = BFFCDD5E2BF90B6200C208B1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BFFCDD5C2BF90B6200C208B1 /* PreShots */,
-				BF10C2F52C174FAE00C567A3 /* PicPulseIpadExtension */,
+				BF10C2F52C174FAE00C567A3 /* PicPulse2IpadExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -298,6 +298,7 @@
 				CODE_SIGN_ENTITLEMENTS = PicPulseIpadExtension/PicPulseIpadExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PicPulseIpadExtension/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -336,6 +337,7 @@
 				CODE_SIGN_ENTITLEMENTS = PicPulseIpadExtension/PicPulseIpadExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PicPulseIpadExtension/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -400,6 +402,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -463,6 +466,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -492,7 +496,8 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -510,7 +515,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -524,7 +529,8 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -542,7 +548,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -551,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulseIpadExtension" */ = {
+		BF10C3042C174FAF00C567A3 /* Build configuration list for PBXNativeTarget "PicPulse2IpadExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF10C3022C174FAF00C567A3 /* Debug */,
@@ -560,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFFCDD582BF90B6200C208B1 /* Build configuration list for PBXProject "PreShots" */ = {
+		BFFCDD582BF90B6200C208B1 /* Build configuration list for PBXProject "PicPulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFFCDD6A2BF90B6400C208B1 /* Debug */,
@@ -581,12 +587,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BF59A11E2C5FE96400C87C0E /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+		BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.2;
+				minimumVersion = 5.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -608,14 +614,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ImportImagesFeature;
 		};
-		BF59A11F2C5FE97300C87C0E /* RevenueCat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF59A11E2C5FE96400C87C0E /* XCRemoteSwiftPackageReference "purchases-ios" */;
-			productName = RevenueCat;
-		};
 		BF6206982C6AF41B0001B151 /* AutoUpdates */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AutoUpdates;
+		};
+		BFC111C02C782B5D00470BE5 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

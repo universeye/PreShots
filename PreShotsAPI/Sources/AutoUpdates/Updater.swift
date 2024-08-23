@@ -81,64 +81,62 @@ public class Updater {
             }
             
             do {
-                // Get the app's name
-                guard let bundleID = Bundle.main.bundleIdentifier,
-                      let runningApplication = NSRunningApplication.runningApplications(withBundleIdentifier: bundleID).first,
-                      let appURL = runningApplication.bundleURL else {
-                    print("Could not get the current app's information")
-                    return
-                }
+                // Get file attributes
+                let attributes = try FileManager.default.attributesOfItem(atPath: localURL.path)
+                print("File size: \(attributes[.size] ?? "Unknown")")
+                print("File permissions: \(attributes[.posixPermissions] ?? "Unknown")")
                 
-                let appName = appURL.lastPathComponent
+                // Check file type
+                let fileTypeProcess = Process()
+                fileTypeProcess.launchPath = "/usr/bin/file"
+                fileTypeProcess.arguments = ["-b", localURL.path]
+                let fileTypePipe = Pipe()
+                fileTypeProcess.standardOutput = fileTypePipe
+                try fileTypeProcess.run()
+                fileTypeProcess.waitUntilExit()
+                let fileType = String(data: fileTypePipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)
+                print("File type: \(fileType ?? "Unknown")")
                 
-                // Create a temporary directory
-                let tempDir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-                try FileManager.default.createDirectory(at: tempDir, withIntermediateDirectories: true)
+                // Try to get DMG info
+                let infoProcess = Process()
+                infoProcess.launchPath = "/usr/bin/hdiutil"
+                infoProcess.arguments = ["imageinfo", localURL.path]
+                let infoPipe = Pipe()
+                infoProcess.standardOutput = infoPipe
+                infoProcess.standardError = infoPipe
+                try infoProcess.run()
+                infoProcess.waitUntilExit()
+                let infoOutput = String(data: infoPipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)
+                print("DMG info output: \(infoOutput ?? "No output")")
                 
-                // Unzip the downloaded file
-                let unzipProcess = Process()
-                unzipProcess.launchPath = "/usr/bin/unzip"
-                unzipProcess.arguments = ["-q", localURL.path, "-d", tempDir.path]
-                try unzipProcess.run()
-                unzipProcess.waitUntilExit()
+                // Try to list DMG contents without mounting
+                let listProcess = Process()
+                listProcess.launchPath = "/usr/bin/hdiutil"
+                listProcess.arguments = ["ls", "-R", localURL.path]
+                let listPipe = Pipe()
+                listProcess.standardOutput = listPipe
+                listProcess.standardError = listPipe
+                try listProcess.run()
+                listProcess.waitUntilExit()
+                let listOutput = String(data: listPipe.fileHandleForReading.readDataToEndOfFile(), encoding: .utf8)
+                print("DMG contents: \(listOutput ?? "Unable to list contents")")
                 
-                // Find the .app file in the unzipped contents
-                guard let newAppURL = try FileManager.default.contentsOfDirectory(at: tempDir, includingPropertiesForKeys: nil)
-                    .first(where: { $0.pathExtension == "app" }) else {
-                    print("Could not find .app file in the downloaded contents")
-                    return
-                }
+                // If we've made it this far, outline next steps
+                print("Next steps would be:")
+                print("1. Verify the DMG file integrity")
+                print("2. Attempt to extract contents without mounting")
+                print("3. If extraction is successful, locate the .app file")
+                print("4. Copy the .app file to the Applications folder")
+                print("5. Set proper permissions on the new app")
+                print("6. Launch the new app version")
                 
-                // Move the old app to the trash
-                try FileManager.default.trashItem(at: appURL, resultingItemURL: nil)
-                
-                // Move the new app to the Applications folder
-                let newAppFinalURL = URL(fileURLWithPath: "/Applications").appendingPathComponent(appName)
-                try FileManager.default.moveItem(at: newAppURL, to: newAppFinalURL)
-                
-                // Relaunch the app
-                DispatchQueue.main.async {
-                    let alert = NSAlert()
-                    alert.messageText = "Update Complete"
-                    alert.informativeText = "The application has been updated. It will now restart."
-                    alert.addButton(withTitle: "OK")
-                    alert.runModal()
-                    
-                    let configuration = NSWorkspace.OpenConfiguration()
-                    configuration.activates = true
-                    NSWorkspace.shared.openApplication(at: newAppFinalURL, configuration: configuration) { _, error in
-                        if let error = error {
-                            print("Failed to relaunch app: \(error)")
-                        } else {
-                            exit(0)
-                        }
-                    }
-                }
             } catch {
-                print("Error during installation: \(error)")
+                print("Error during diagnosis: \(error)")
             }
         }
         
         downloadTask.resume()
     }
+
+    
 }
