@@ -94,17 +94,16 @@ class ImageResizeViewModel: ObservableObject {
         var downloadsDirectory: URL
         if let downloadsFolderUrl = DestinationFolderManager.shared.accessSavedFolder() {
             downloadsDirectory = downloadsFolderUrl
-        } else {
-            downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
-        }
-        let imageName = UUID().uuidString + ".png" // You can use original image name if desired
-        let imageUrl = downloadsDirectory.appendingPathComponent(imageName)
-        
-        do {
-            try pngData.write(to: imageUrl)
-            print("Image saved to \(imageUrl.path)")
-        } catch {
-            print("Failed to save image: \(error.localizedDescription)")
+            
+            let imageName = UUID().uuidString + ".png" // You can use original image name if desired
+            let imageUrl = downloadsDirectory.appendingPathComponent(imageName)
+            
+            do {
+                try pngData.write(to: imageUrl)
+                print("Image saved to \(imageUrl.path)")
+            } catch {
+                print("Failed to save image: \(error.localizedDescription)")
+            }
         }
     }
     

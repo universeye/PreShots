@@ -34,6 +34,7 @@ struct GeneralSettingsView: View {
                 Toggle(isOn: $autoRemoveImage, label: {
                     Label("Auto remove image after exporting", systemImage: "trash")
                 })
+                .toggleStyle(.checkbox)
                 
                 LabeledContent {
                     HStack {

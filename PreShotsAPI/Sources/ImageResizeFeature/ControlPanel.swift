@@ -70,6 +70,10 @@ public struct ControlPanel: View {
                             .clipShape(.rect(cornerRadius: 13))
                     } else {
                         Button(action: {
+                            guard DestinationFolderManager.shared.accessSavedFolder() != nil else {
+                                DestinationFolderManager.shared.requestDownloadsFolderPermission()
+                                return
+                            }
                             viewModel.resizeAndSaveImages(images: importerViewModel.images) {
                                 let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
                                 if isAutoDelete {
