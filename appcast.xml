@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>PicPulse</title>
+        <item>
+            <title>1.2.2</title>
+            <pubDate>Mon, 02 Sep 2024 22:53:59 +0800</pubDate>
+            <sparkle:version>26</sparkle:version>
+            <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/universeye/PreShots/releases/download/v1.2.2/PicPulse.1.2.2.dmg" length="10064564" type="application/octet-stream" sparkle:edSignature="AjMkCDhx35q0/Cb5FCCFbR/rhvynQxXh3fhHHfpnSdE5kJEX0Lf3Wi7RS/lHL3cTG0xKsHZAi9TqoKid32jBCw=="/>
+        </item>
+    </channel>
+</rss>
