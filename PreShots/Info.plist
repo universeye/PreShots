@@ -6,5 +6,7 @@
 	<false/>
 	<key>com.apple.security.files.user-selected.read-write</key>
 	<string>true</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
