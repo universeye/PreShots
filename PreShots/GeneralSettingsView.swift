@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AutoUpdates
 import DestinationManager
 
 struct GeneralSettingsView: View {
@@ -98,7 +97,6 @@ struct GeneralSettingsView: View {
                 })
 
                 Button {
-                    Updater.shared.checkForUpdates(withAlert: true)
                 } label: {
                     Label("Check for updates", systemImage: "arrow.down.circle")
                 }

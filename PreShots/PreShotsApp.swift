@@ -7,13 +7,16 @@
 
 import SwiftUI
 import RevenueCat
+import Sparkle
 
 @main
 struct PreShotsApp: App {
+    private let updaterController: SPUStandardUpdaterController
     
     init() {
         Purchases.logLevel = .debug
         Purchases.configure(withAPIKey: APIKey.revenueCatId)
+        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
     }
     
     var body: some Scene {
@@ -21,6 +24,11 @@ struct PreShotsApp: App {
             ContentView()
         }
         .defaultSize(width: 800, height: 600)
+        .commands {
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesView(updater: updaterController.updater)
+            }
+        }
         
         Settings {
             TabView {

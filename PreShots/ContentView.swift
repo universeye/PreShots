@@ -8,7 +8,6 @@
 import SwiftUI
 import ImportImagesFeature
 import ImageResizeFeature
-import AutoUpdates
 
 
 struct ContentView: View {
@@ -65,7 +64,7 @@ struct ContentView: View {
         .padding()
         .frame(minWidth: 1000, minHeight: 800)
         .onFirstAppear {
-            Updater.shared.checkForUpdates()
+          
         }
     }
     
@@ -115,7 +114,7 @@ struct ContentView: View {
                     .foregroundStyle(.gray)
                     .font(.footnote)
                 Button {
-                    Updater.shared.checkForUpdates(withAlert: true)
+                   
                 } label: {
                     Text("Check for updates")
                         .font(.footnote)

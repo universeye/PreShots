@@ -17,13 +17,14 @@
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
-		BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */ = {isa = PBXBuildFile; productRef = BF6206982C6AF41B0001B151 /* AutoUpdates */; };
 		BF62069B2C6AFE830001B151 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069A2C6AFE830001B151 /* Links.swift */; };
 		BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */; };
 		BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069E2C6AFF7D0001B151 /* View+Ext.swift */; };
 		BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7245342C60F33F00804A93 /* TipsListView.swift */; };
 		BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BFC111C02C782B5D00470BE5 /* RevenueCat */; };
 		BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38C802C5FD1DC00525EF9 /* APIKey.swift */; };
+		BFEFD7842C860407007B3EDC /* CheckForUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */; };
+		BFEFD7862C860456007B3EDC /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = BFEFD7852C860456007B3EDC /* Sparkle */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
 		BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD622BF90B6200C208B1 /* ContentView.swift */; };
 		BFFCDD652BF90B6400C208B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFCDD642BF90B6400C208B1 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		BF6384F32C50B71500AC365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BF7245342C60F33F00804A93 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		BFD38C802C5FD1DC00525EF9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdatesView.swift; sourceTree = "<group>"; };
 		BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreShotsApp.swift; sourceTree = "<group>"; };
 		BFFCDD622BF90B6200C208B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,8 +72,8 @@
 				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 				BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */,
+				BFEFD7862C860456007B3EDC /* Sparkle in Frameworks */,
 				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
-				BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +141,7 @@
 				BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */,
 				BF62069E2C6AFF7D0001B151 /* View+Ext.swift */,
 				BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */,
+				BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */,
 				BFFCDD642BF90B6400C208B1 /* Assets.xcassets */,
 				BFFCDD692BF90B6400C208B1 /* PreShots.entitlements */,
 				BFFCDD662BF90B6400C208B1 /* Preview Content */,
@@ -193,9 +196,9 @@
 			packageProductDependencies = (
 				BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */,
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
-				BF6206982C6AF41B0001B151 /* AutoUpdates */,
 				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
 				BFC111C02C782B5D00470BE5 /* RevenueCat */,
+				BFEFD7852C860456007B3EDC /* Sparkle */,
 			);
 			productName = PreShots;
 			productReference = BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */;
@@ -230,6 +233,7 @@
 			mainGroup = BFFCDD542BF90B6200C208B1;
 			packageReferences = (
 				BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = BFFCDD5E2BF90B6200C208B1 /* Products */;
 			projectDirPath = "";
@@ -281,6 +285,7 @@
 				BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */,
 				BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */,
 				BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */,
+				BFEFD7842C860407007B3EDC /* CheckForUpdatesView.swift in Sources */,
 				BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */,
 				BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */,
 				BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */,
@@ -496,7 +501,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -513,7 +518,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -529,7 +534,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -546,7 +551,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -595,6 +600,14 @@
 				minimumVersion = 5.3.0;
 			};
 		};
+		BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -614,14 +627,15 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ImportImagesFeature;
 		};
-		BF6206982C6AF41B0001B151 /* AutoUpdates */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AutoUpdates;
-		};
 		BFC111C02C782B5D00470BE5 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
+		};
+		BFEFD7852C860456007B3EDC /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

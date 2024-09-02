@@ -23,9 +23,6 @@ let package = Package(
             name: "ImageResizeFeature",
             targets: ["ImageResizeFeature"]),
         .library(
-            name: "AutoUpdates",
-            targets: ["AutoUpdates"]),
-        .library(
             name: "ImagesSetsFeature",
             targets: ["ImagesSetsFeature"]),
         .library(
@@ -46,8 +43,6 @@ let package = Package(
         .target(
             name: "ImageResizeFeature",
             dependencies: ["Models", "DestinationManager", "ImportImagesFeature"/*, .product(name: "RevenueCat", package: "purchases-ios")*/]),
-        .target(
-            name: "AutoUpdates"),
         .target(
             name: "ImagesSetsFeature",
             dependencies: ["DestinationManager", "Models"]),

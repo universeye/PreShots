@@ -6,7 +6,13 @@
 	<false/>
 	<key>com.apple.security.files.user-selected.read-write</key>
 	<string>true</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	<key>SUEnableInstallerLancherService</key>
+	<true/>
+	<key>SUEnableDownloaderService</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>http://jacklandrin.github.io/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>9IjZis58ROjBjOeZm7l6BiH2zM3hNSkyfgLt1dbw+rw=</string>
 </dict>
 </plist>
