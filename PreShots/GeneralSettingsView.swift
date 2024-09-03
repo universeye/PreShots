@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DestinationManager
+import Sparkle
 
 struct GeneralSettingsView: View {
     @State private var isShowWelcome = false
@@ -14,6 +15,11 @@ struct GeneralSettingsView: View {
     @State private var isPresentTipSheet: Bool = false
     @State private var destinationURLString: String = ""
     @AppStorage("autoRemoveImage") var autoRemoveImage: Bool = false
+    private var updater: SPUUpdater?
+    
+    init(updater: SPUUpdater?) {
+        self.updater = updater
+    }
     
     var body: some View {
         Form {
@@ -97,6 +103,9 @@ struct GeneralSettingsView: View {
                 })
 
                 Button {
+                    if let updater = updater {
+                        updater.checkForUpdates()
+                    }
                 } label: {
                     Label("Check for updates", systemImage: "arrow.down.circle")
                 }
@@ -185,5 +194,5 @@ struct GeneralSettingsView: View {
 }
 
 #Preview {
-    GeneralSettingsView()
+    GeneralSettingsView(updater: nil)
 }

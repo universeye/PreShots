@@ -32,7 +32,7 @@ struct PreShotsApp: App {
         
         Settings {
             TabView {
-                GeneralSettingsView()
+                GeneralSettingsView(updater: updaterController.updater)
                     .tabItem { Label("Settings", systemImage: "gearshape") }
             }
             

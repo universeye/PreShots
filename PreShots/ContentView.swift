@@ -113,14 +113,6 @@ struct ContentView: View {
                 Text("PicPulse v\(currentVersion)")
                     .foregroundStyle(.gray)
                     .font(.footnote)
-                Button {
-                   
-                } label: {
-                    Text("Check for updates")
-                        .font(.footnote)
-                }
-                .buttonStyle(.link)
-                
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 8)
