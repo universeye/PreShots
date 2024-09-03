@@ -6,7 +6,7 @@
 	<false/>
 	<key>com.apple.security.files.user-selected.read-write</key>
 	<string>true</string>
-	<key>SUEnableInstallerLancherService</key>
+	<key>SUEnableInstallerLauncherService</key>
 	<true/>
 	<key>SUEnableDownloaderService</key>
 	<true/>
