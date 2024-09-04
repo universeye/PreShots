@@ -31,7 +31,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
             Picker("Feature", selection: $selectedFeature.animation(.easeInOut)) {
                 ForEach(AppFeatures.allCases, id: \.self) {
                     Text($0.title)
@@ -63,9 +62,6 @@ struct ContentView: View {
         }
         .padding()
         .frame(minWidth: 1000, minHeight: 800)
-        .onFirstAppear {
-          
-        }
     }
     
     @ViewBuilder
