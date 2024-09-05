@@ -16,6 +16,7 @@ enum Links {
     case email
     case thread
     case mastadon
+    case appStore
     
     static func getLink(link: Links) -> URL? {
         switch link {
@@ -35,6 +36,8 @@ enum Links {
             return URL(string: "https://www.threads.net/@yoyokuoo")
         case .mastadon:
             return URL(string: "https://mastodon.world/@yoyokuo")
+        case .appStore:
+            return URL(string: "itms-apps://itunes.apple.com/app/id\(6503602987)")
         }
     }
 }

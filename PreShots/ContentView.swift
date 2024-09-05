@@ -8,14 +8,15 @@
 import SwiftUI
 import ImportImagesFeature
 import ImageResizeFeature
-import AutoUpdates
 
 
 struct ContentView: View {
     @StateObject private var viewModel = ImageImporterViewModel()
     @State private var isPresentTipSheet: Bool = false
     @State private var selectedFeature: AppFeatures = .batchImageResizer
-    
+    @State private var isUpdateAvailableBool: Bool = false
+    @State private var isCheckingForUpdate: Bool = false
+
     enum AppFeatures: CaseIterable {
         case batchImageResizer
         case imagesSetsExporter
@@ -65,7 +66,9 @@ struct ContentView: View {
         .padding()
         .frame(minWidth: 1000, minHeight: 800)
         .onFirstAppear {
-            Updater.shared.checkForUpdates()
+            Task {
+                await checkForUpdate()
+            }
         }
     }
     
@@ -114,14 +117,16 @@ struct ContentView: View {
                 Text("PicPulse v\(currentVersion)")
                     .foregroundStyle(.gray)
                     .font(.footnote)
-                Button {
-                    Updater.shared.checkForUpdates(withAlert: true)
-                } label: {
-                    Text("Check for updates")
-                        .font(.footnote)
-                }
-                .buttonStyle(.link)
                 
+                if isUpdateAvailableBool {
+                    Link(destination: Links.getLink(link: .appStore)!, label: {
+                        HStack {
+                            Text("New version available, Update now!")
+                            Image(systemName: "arrow.up.right")
+                        }
+                    })
+                    .buttonStyle(.link)
+                }
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 8)
@@ -131,6 +136,38 @@ struct ContentView: View {
             .font(.footnote)
             .padding(.top, 8)
         
+    }
+    
+    private func checkForUpdate() async {
+        isCheckingForUpdate = true
+        do {
+            self.isUpdateAvailableBool = try await isUpdateAvailable()
+        } catch {
+            print("Failed checking update: \(error).")
+        }
+        isCheckingForUpdate = false
+    }
+
+    private func isUpdateAvailable() async throws -> Bool {
+        guard let info = Bundle.main.infoDictionary,
+            let currentVersion = info["CFBundleShortVersionString"] as? String,
+            let identifier = info["CFBundleIdentifier"] as? String,
+            let url = URL(string: "https://itunes.apple.com/tw/lookup?bundleId=\(identifier)") else {
+            throw VersionError.invalidBundleInfo
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        guard let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String: Any] else {
+            throw VersionError.invalidResponse
+        }
+        
+        if let result = (json["results"] as? [Any])?.first as? [String: Any], let version = result["version"] as? String {
+            print("version: \(version)")
+            print("currentVersion: \(currentVersion)")
+            return version > currentVersion
+        }
+        throw VersionError.invalidResponse
     }
 }
 

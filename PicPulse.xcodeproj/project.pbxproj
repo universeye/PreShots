@@ -16,8 +16,8 @@
 		BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */; };
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */; };
+		BF318C142C89AE06000B703A /* VersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF318C132C89AE06000B703A /* VersionError.swift */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
-		BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */ = {isa = PBXBuildFile; productRef = BF6206982C6AF41B0001B151 /* AutoUpdates */; };
 		BF62069B2C6AFE830001B151 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069A2C6AFE830001B151 /* Links.swift */; };
 		BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */; };
 		BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069E2C6AFF7D0001B151 /* View+Ext.swift */; };
@@ -39,6 +39,7 @@
 		BF10C2FE2C174FAF00C567A3 /* PicPulseIpadExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PicPulseIpadExtension.entitlements; sourceTree = "<group>"; };
 		BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		BF318C132C89AE06000B703A /* VersionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionError.swift; sourceTree = "<group>"; };
 		BF59A1212C60B02300C87C0E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BF62069A2C6AFE830001B151 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnAppearModifier.swift; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 				BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */,
 				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
-				BF6206992C6AF41B0001B151 /* AutoUpdates in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +133,7 @@
 				BF6384F32C50B71500AC365E /* Info.plist */,
 				BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */,
 				BFFCDD622BF90B6200C208B1 /* ContentView.swift */,
+				BF318C132C89AE06000B703A /* VersionError.swift */,
 				BFD38C802C5FD1DC00525EF9 /* APIKey.swift */,
 				BF62069A2C6AFE830001B151 /* Links.swift */,
 				BF7245342C60F33F00804A93 /* TipsListView.swift */,
@@ -193,7 +194,6 @@
 			packageProductDependencies = (
 				BF10C2ED2C16FD8100C567A3 /* ImportImagesFeature */,
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
-				BF6206982C6AF41B0001B151 /* AutoUpdates */,
 				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
 				BFC111C02C782B5D00470BE5 /* RevenueCat */,
 			);
@@ -278,6 +278,7 @@
 			files = (
 				BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */,
 				BF62069B2C6AFE830001B151 /* Links.swift in Sources */,
+				BF318C142C89AE06000B703A /* VersionError.swift in Sources */,
 				BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */,
 				BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */,
 				BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */,
@@ -496,7 +497,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -513,7 +514,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -529,7 +530,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 25;
+				CURRENT_PROJECT_VERSION = 26;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -546,7 +547,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -613,10 +614,6 @@
 		BF10C3072C174FFA00C567A3 /* ImportImagesFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImportImagesFeature;
-		};
-		BF6206982C6AF41B0001B151 /* AutoUpdates */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AutoUpdates;
 		};
 		BFC111C02C782B5D00470BE5 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;
