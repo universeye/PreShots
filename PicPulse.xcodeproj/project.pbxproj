@@ -497,7 +497,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -514,7 +514,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -530,7 +530,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 31;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -547,7 +547,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;

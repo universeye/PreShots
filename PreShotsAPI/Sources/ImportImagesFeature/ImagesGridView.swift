@@ -26,7 +26,6 @@ public struct ImagesGridView: View {
                     ForEach(viewModel.images, id: \.self) { imageFile in
                         ImageCell(imageFile: imageFile, viewModel: viewModel)
                     }
-                    .background()
                     .clipShape(.rect(cornerRadius: 10))
                 }
                 .clipShape(.rect(cornerRadius: 10))

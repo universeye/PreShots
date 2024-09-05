@@ -30,17 +30,6 @@ struct ImageCell: View {
                     .frame(width: 200, height: 200)
                     .padding()
 #endif
-                VStack {
-                    Button {
-                        withAnimation {
-                            viewModel.removeImage(target: imageFile.id)
-                        }
-                    } label: {
-                        Image(systemName: "xmark")
-                    }
-                    .padding(.vertical)
-                    Spacer()
-                }
             }
             Text("\(imageFile.fileName)")
                 .font(.footnote)
@@ -58,12 +47,23 @@ struct ImageCell: View {
             }
             .font(.footnote)
             
+            Button(action: {
+                            withAnimation {
+                                viewModel.removeImage(target: imageFile.id)
+                            }
+                        }, label: {
+                            Text("Delete")
+                                .foregroundStyle(.red)
+                                .font(.footnote)
+                        })
+
+            
             //Text("↓")
             .padding(.bottom)
         }
         .padding(.horizontal, 8)
         //.background()
         //.clipShape(.rect(cornerRadius: 10))
-        
+        .background()
     }
 }
