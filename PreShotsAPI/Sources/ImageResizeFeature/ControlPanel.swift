@@ -49,7 +49,7 @@ public struct ControlPanel: View {
                     .padding(.vertical, 8)
                 }
                 
-                DestinationSetterButton()
+               
                 
                 HStack {
                     if viewModel.outputState == .loading {
@@ -58,6 +58,19 @@ public struct ControlPanel: View {
                     }
                     
                     Spacer()
+//                    Button {
+//                        viewModel.resizeRemoveAlphaAndSaveImages(images: importerViewModel.images) {}
+//                    } label: {
+//                        Text("Remove Alpha")
+//                            .font(.system(size: 14, weight: .bold))
+//                            .padding()
+//                            .foregroundStyle(.white)
+//                            .frame(width: 200, height: 50)
+//                            .background(.blue.gradient)
+//                            .clipShape(.rect(cornerRadius: 13))
+//                    }
+//                    .buttonStyle(.plain)
+                    
                     if viewModel.outputState == .loading {
                         ProgressView()
                     } else if viewModel.outputState == .success {
@@ -121,9 +134,6 @@ public struct ControlPanel: View {
                 default:
                     EmptyView()
                 }
-                
-                Divider()
-                    .padding(.top)
             }
             Spacer()
         }

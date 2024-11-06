@@ -8,7 +8,7 @@
 import SwiftUI
 import ImagesSetsFeature
 import ImportImagesFeature
-import DestinationManager
+//import DestinationManager
 
 public struct ImagesSetsControlView: View {
     @ObservedObject var importerViewModel: ImageImporterViewModel
@@ -21,7 +21,7 @@ public struct ImagesSetsControlView: View {
     
     public var body: some View {
         VStack {
-            DestinationSetterButton()
+      
             
             ImageSetsIndicatorView()
             
@@ -45,7 +45,7 @@ public struct ImagesSetsControlView: View {
                         Text("Try Again")
                     }
                     .buttonStyle(.link)
-
+                    
                 }
             default:
                 EmptyView()
@@ -53,6 +53,7 @@ public struct ImagesSetsControlView: View {
             
             HStack {
                 Spacer()
+               
                 
                 Button(action: {
                     guard imageSetExporterViewModel.state != .loading else { return }
@@ -84,11 +85,9 @@ public struct ImagesSetsControlView: View {
                 .buttonStyle(.plain)
                 .disabled(importerViewModel.images.isEmpty)
             }
-            
-            Divider()
-                .padding(.top)
         }
     }
+    
 }
 
 #Preview {

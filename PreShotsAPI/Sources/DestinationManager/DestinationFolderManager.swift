@@ -96,4 +96,26 @@ public class DestinationFolderManager {
             return nil
         }
     }
+    
+    public func saveImageToDownloads(image: NSImage, originalImage: NSImage) {
+        guard let tiffData = image.tiffRepresentation,
+              let bitmap = NSBitmapImageRep(data: tiffData),
+              let pngData = bitmap.representation(using: .png, properties: [:]) else {
+            return
+        }
+        var downloadsDirectory: URL
+        if let downloadsFolderUrl = self.accessSavedFolder() {
+            downloadsDirectory = downloadsFolderUrl
+            
+            let imageName = UUID().uuidString + ".png" // You can use original image name if desired
+            let imageUrl = downloadsDirectory.appendingPathComponent(imageName)
+            
+            do {
+                try pngData.write(to: imageUrl)
+                print("Image saved to \(imageUrl.path)")
+            } catch {
+                print("Failed to save image: \(error.localizedDescription)")
+            }
+        }
+    }
 }

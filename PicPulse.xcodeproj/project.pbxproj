@@ -16,6 +16,8 @@
 		BF10C3012C174FAF00C567A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF10C3002C174FAF00C567A3 /* Preview Assets.xcassets */; };
 		BF10C3082C174FFA00C567A3 /* ImportImagesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF10C3072C174FFA00C567A3 /* ImportImagesFeature */; };
 		BF1879CF2C74B860002C5E70 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1879CE2C74B860002C5E70 /* GeneralSettingsView.swift */; };
+		BF1C5C932CDA4D34009A902E /* RemoveAlphaFeature in Frameworks */ = {isa = PBXBuildFile; productRef = BF1C5C922CDA4D34009A902E /* RemoveAlphaFeature */; };
+		BF1C5C952CDA505B009A902E /* DestinationManager in Frameworks */ = {isa = PBXBuildFile; productRef = BF1C5C942CDA505B009A902E /* DestinationManager */; };
 		BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF59A1212C60B02300C87C0E /* StoreKit.framework */; };
 		BF62069B2C6AFE830001B151 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069A2C6AFE830001B151 /* Links.swift */; };
 		BF62069D2C6AFF6C0001B151 /* OnAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF62069C2C6AFF6C0001B151 /* OnAppearModifier.swift */; };
@@ -72,9 +74,11 @@
 				BF10C2EE2C16FD8100C567A3 /* ImportImagesFeature in Frameworks */,
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 				BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */,
+				BF1C5C932CDA4D34009A902E /* RemoveAlphaFeature in Frameworks */,
 				BFEFD7862C860456007B3EDC /* Sparkle in Frameworks */,
 				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
+				BF1C5C952CDA505B009A902E /* DestinationManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +203,8 @@
 				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
 				BFC111C02C782B5D00470BE5 /* RevenueCat */,
 				BFEFD7852C860456007B3EDC /* Sparkle */,
+				BF1C5C922CDA4D34009A902E /* RemoveAlphaFeature */,
+				BF1C5C942CDA505B009A902E /* DestinationManager */,
 			);
 			productName = PreShots;
 			productReference = BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */;
@@ -501,7 +507,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -518,7 +524,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -534,7 +540,7 @@
 				CODE_SIGN_ENTITLEMENTS = PreShots/PreShots.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 31;
+				CURRENT_PROJECT_VERSION = 32;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -551,7 +557,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -626,6 +632,14 @@
 		BF10C3072C174FFA00C567A3 /* ImportImagesFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImportImagesFeature;
+		};
+		BF1C5C922CDA4D34009A902E /* RemoveAlphaFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RemoveAlphaFeature;
+		};
+		BF1C5C942CDA505B009A902E /* DestinationManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DestinationManager;
 		};
 		BFC111C02C782B5D00470BE5 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;

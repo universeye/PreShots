@@ -26,6 +26,9 @@ let package = Package(
             name: "ImagesSetsFeature",
             targets: ["ImagesSetsFeature"]),
         .library(
+            name: "RemoveAlphaFeature",
+            targets: ["RemoveAlphaFeature"]),
+        .library(
             name: "DestinationManager",
             targets: ["DestinationManager"]),
     ],
@@ -42,12 +45,15 @@ let package = Package(
             name: "Models"),
         .target(
             name: "ImageResizeFeature",
-            dependencies: ["Models", "DestinationManager", "ImportImagesFeature"/*, .product(name: "RevenueCat", package: "purchases-ios")*/]),
+            dependencies: ["Models", "DestinationManager", "RemoveAlphaFeature", "ImportImagesFeature", "ImagesSetsFeature"/*, .product(name: "RevenueCat", package: "purchases-ios")*/]),
         .target(
             name: "ImagesSetsFeature",
             dependencies: ["DestinationManager", "Models"]),
         .target(
             name: "DestinationManager"),
+        .target(
+            name: "RemoveAlphaFeature",
+            dependencies: ["DestinationManager", "Models"]),
         .testTarget(
             name: "PreShotsAPITests",
             dependencies: ["ImageResizeFeature", "Models"]),
