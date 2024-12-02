@@ -40,25 +40,25 @@ struct ContentView: View {
                 Button(action: { self.step = 1 }, label: {
                     Text(AppFeatures.batchImageResizer.title)
                         .foregroundColor(step == 1 ? .primary : .secondary)
-                        .padding()
+                        .padding(8)
 //                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 1 ? 1 : 0.65)
+                        .scaleEffect(step == 1 ? 0.75 : 0.65)
                 })
                 
                 Button(action: { self.step = 2 }, label: {
                     Text(AppFeatures.imagesSetsExporter.title)
                        .foregroundColor(step == 2 ? .primary : .secondary)
-                        .padding()
+                        .padding(8)
 //                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 2 ? 1 : 0.65)
+                        .scaleEffect(step == 2 ? 0.75 : 0.65)
                 })
                 
                 Button(action: {self.step = 3 }, label: {
                     Text(AppFeatures.alphaRemover.title)
                         .foregroundColor(step == 3 ? .primary : .secondary)
-                        .padding()
+                        .padding(8)
 //                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 3 ? 1 : 0.65)
+                        .scaleEffect(step == 3 ? 0.75 : 0.65)
                 })
             }
             .animation(.smooth, value: step)
