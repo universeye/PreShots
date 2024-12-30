@@ -25,6 +25,8 @@ public struct ImagesSetsControlView: View {
             
             ImageSetsIndicatorView()
             
+            Spacer()
+            
             switch imageSetExporterViewModel.state {
             case .error(let error):
                 VStack {
@@ -79,13 +81,14 @@ public struct ImagesSetsControlView: View {
                     .foregroundStyle(.white)
                     .frame(width: 200, height: 50)
                     .background(.blue.gradient)
-                    .clipShape(.rect(cornerRadius: 13))
+                    .clipShape(.rect(cornerRadius: 10))
                     
                 }
                 .buttonStyle(.plain)
                 .disabled(importerViewModel.images.isEmpty)
             }
         }
+        .padding()
     }
     
 }

@@ -36,79 +36,46 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            HStack(spacing: 20) {
-                Button(action: { self.step = 1 }, label: {
-                    Text(AppFeatures.batchImageResizer.title)
-                        .foregroundColor(step == 1 ? .primary : .secondary)
-                        .padding(8)
-//                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 1 ? 0.75 : 0.65)
-                })
-                
-                Button(action: { self.step = 2 }, label: {
-                    Text(AppFeatures.imagesSetsExporter.title)
-                       .foregroundColor(step == 2 ? .primary : .secondary)
-                        .padding(8)
-//                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 2 ? 0.75 : 0.65)
-                })
-                
-                Button(action: {self.step = 3 }, label: {
-                    Text(AppFeatures.alphaRemover.title)
-                        .foregroundColor(step == 3 ? .primary : .secondary)
-                        .padding(8)
-//                        .background(Circle().shadow(radius: 5))
-                        .scaleEffect(step == 3 ? 0.75 : 0.65)
-                })
-            }
-            .animation(.smooth, value: step)
-//            .animation(.spring(response: 0.4, dampingFraction: 0.5))
-            .font(.system(size: 20,weight: .bold,design: .rounded))
             
-            ImagesGridView(viewModel: viewModel)
-                .animation(.easeIn, value: selectedFeature)
             
-            DestinationSetterButton()
-            GeometryReader { geometryProxy in
-                HStack {
-                    ControlPanel(importerViewModel: viewModel)
-                        .frame(height: 300)
-                        .animation(.smooth, value: selectedFeature)
-                        .frame(width: geometryProxy.frame(in: .global).width)
-                        .opacity(step == 1 ? 1 : 0)
-                    ImagesSetsControlView(importerViewModel: viewModel)
-                        .frame(height: 300)
-                        .animation(.smooth, value: selectedFeature)
-                        .frame(width: geometryProxy.frame(in: .global).width)
-                        .opacity(step == 2 ? 1 : 0)
-                    RemoveAlphaControlView(importerViewModel: viewModel)
-                        .frame(height: 300)
-                        .animation(.smooth, value: selectedFeature)
-                        .frame(width: geometryProxy.frame(in: .global).width)
-                        .opacity(step == 3 ? 1 : 0)
+            HStack {
+                ImagesGridView(viewModel: viewModel)
+                    .animation(.easeIn, value: selectedFeature)
+                if !viewModel.images.isEmpty {
+                    Divider()
                 }
-                .frame(width: geometryProxy.frame(in: .global).width * 3) //Make Hstack 3x width of device
-                .offset(x: step == 1 ? 0
-                            : step == 2 ? -geometryProxy.frame(in: .global).width
-                            : -geometryProxy.frame(in: .global).width * 2)
-                .animation(Animation.interpolatingSpring(stiffness: 50, damping: 8), value: step)
-                .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                                    .onEnded({ value in
-                                        if value.translation.width < 0 {
-                                            if step <= 2 {
-                                                step += 1
-                                            }
-                                        }
-                                        if value.translation.width > 0 {
-                                            if step > 1 {
-                                                step -= 1
-                                            }
-                                        }
-                                    }))
+                VStack {
+                    VStack(spacing: 20) {
+                        Picker("Features", selection: $step) {
+                            Text(AppFeatures.batchImageResizer.title)
+                                .tag(1)
+                            Text(AppFeatures.imagesSetsExporter.title)
+                                .tag(2)
+                            Text(AppFeatures.alphaRemover.title)
+                                .tag(3)
+                        }
+                        .pickerStyle(.segmented)
+                        .labelsHidden()
+                        .padding(.horizontal)
+                        .animation(.smooth, value: step)
+                        .font(.system(size: 16, weight: .medium, design: .rounded))
+                        DestinationSetterButton()
+                        switch step {
+                        case 1:
+                            ControlPanel(importerViewModel: viewModel)
+                        case 2:
+                            ImagesSetsControlView(importerViewModel: viewModel)
+                        case 3:
+                            RemoveAlphaControlView(importerViewModel: viewModel)
+                        default:
+                            EmptyView()
+                        }
+                    }
+                }
             }
-            Divider()
-                .padding(.top)
-            bottomSection()
+//            Divider()
+//                .padding(.top)
+//            bottomSection()
         }
         .padding()
         .frame(minWidth: 1000, minHeight: 800)

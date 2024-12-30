@@ -38,7 +38,7 @@ public struct ImagesGridView: View {
             .overlay {
                 emptyStateView()
             }
-            Divider()
+//            Divider()
             HStack {
 #if os(macOS)
                 Button(action: {

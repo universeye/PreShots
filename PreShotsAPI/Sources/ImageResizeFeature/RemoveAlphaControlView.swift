@@ -26,7 +26,7 @@ public struct RemoveAlphaControlView: View {
                 ProgressView()
                     .progressViewStyle(.linear)
             }
-            
+            Spacer()
             HStack {
                 Spacer()
                 Button {
@@ -38,11 +38,12 @@ public struct RemoveAlphaControlView: View {
                         .foregroundStyle(.white)
                         .frame(width: 200, height: 50)
                         .background(.blue.gradient)
-                        .clipShape(.rect(cornerRadius: 13))
+                        .clipShape(.rect(cornerRadius: 10))
                 }
                 .buttonStyle(.plain)
             }
         }
+        .padding()
     }
 }
 

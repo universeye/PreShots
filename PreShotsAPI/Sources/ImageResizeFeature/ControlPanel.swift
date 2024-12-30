@@ -48,9 +48,7 @@ public struct ControlPanel: View {
                     .clipShape(.rect(cornerRadius: 5))
                     .padding(.vertical, 8)
                 }
-                
-               
-                
+                Spacer()
                 HStack {
                     if viewModel.outputState == .loading {
                         ProgressView()
@@ -102,7 +100,7 @@ public struct ControlPanel: View {
                                 .foregroundStyle(.white)
                                 .frame(width: 200, height: 50)
                                 .background(.blue.gradient)
-                                .clipShape(.rect(cornerRadius: 13))
+                                .clipShape(.rect(cornerRadius: 10))
                             
                         }
                         .buttonStyle(.plain)
@@ -135,7 +133,8 @@ public struct ControlPanel: View {
                     EmptyView()
                 }
             }
-            Spacer()
+            .padding()
+//            Spacer()
         }
     }
     
