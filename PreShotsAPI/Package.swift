@@ -50,7 +50,8 @@ let package = Package(
             name: "ImagesSetsFeature",
             dependencies: ["DestinationManager", "Models"]),
         .target(
-            name: "DestinationManager"),
+            name: "DestinationManager",
+            dependencies: ["Models"]),
         .target(
             name: "RemoveAlphaFeature",
             dependencies: ["DestinationManager", "Models"]),

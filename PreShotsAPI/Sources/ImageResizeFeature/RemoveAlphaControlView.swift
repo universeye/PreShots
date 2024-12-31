@@ -20,17 +20,27 @@ public struct RemoveAlphaControlView: View {
     
     public var body: some View {
         VStack {
-            
-            
             if viewModel.outputState == .loading {
                 ProgressView()
                     .progressViewStyle(.linear)
             }
+            
+            if !importerViewModel.images.isEmpty {
+                Text(viewModel.hasAlphaChannel(in: importerViewModel.images.map({ $0.image }))
+                    ? "Images contain alpha channels"
+                    : "No alpha channels detected")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            
             Spacer()
             HStack {
                 Spacer()
                 Button {
-                    viewModel.resizeRemoveAlphaAndSaveImages(images: importerViewModel.images) {}
+                    viewModel.resizeRemoveAlphaAndSaveImages(
+                        images: importerViewModel.images,
+                        selectedFormat: .png
+                    ) {}
                 } label: {
                     Text("Remove Alpha")
                         .font(.system(size: 14, weight: .bold))

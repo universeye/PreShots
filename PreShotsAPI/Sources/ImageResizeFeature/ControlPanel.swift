@@ -8,6 +8,7 @@
 import SwiftUI
 import ImportImagesFeature
 import DestinationManager
+import Models
 
 public struct ControlPanel: View {
     @ObservedObject var importerViewModel: ImageImporterViewModel
@@ -22,6 +23,25 @@ public struct ControlPanel: View {
     public var body: some View {
         HStack {
             VStack(alignment: .leading) {
+                Picker(selection: $importerViewModel.selectedFormat, label: Text("Image Format")) {
+                    ForEach(ImageFormat.allCases, id: \.self) { format in
+                        Text(format.showString)
+                            .tag(format.rawValue)
+                    }
+                }
+                .pickerStyle(.menu)
+                .frame(width: 400)
+
+                if importerViewModel.selectedFormat == .jpeg {
+                    HStack {
+                        Text("Compression Quality")
+                        Slider(value: $importerViewModel.compressionQuality, in: 0.1...1, step: 0.01)
+                            .frame(width: 300)
+                        Text("\(Int(importerViewModel.compressionQuality * 100))%")
+                    }
+                    .padding(.vertical, 8)
+                }
+
                 DevicesButtons(viewModel: viewModel)
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
@@ -80,18 +100,23 @@ public struct ControlPanel: View {
                             .background(.blue.gradient)
                             .clipShape(.rect(cornerRadius: 13))
                     } else {
-                        Button(action: {
-                            guard DestinationFolderManager.shared.accessSavedFolder() != nil else {
-                                DestinationFolderManager.shared.requestDownloadsFolderPermission()
-                                return
-                            }
-                            viewModel.resizeAndSaveImages(images: importerViewModel.images) {
-                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
-                                if isAutoDelete {
-                                    withAnimation {
-                                        importerViewModel.images = []
-                                    }
+                        Button(
+                            action: {
+                                guard DestinationFolderManager.shared.accessSavedFolder() != nil else {
+                                    DestinationFolderManager.shared.requestDownloadsFolderPermission()
+                                    return
                                 }
+                                viewModel.resizeAndSaveImages(
+                                    images: importerViewModel.images,
+                                    selectedFormat: importerViewModel.selectedFormat,
+                                    compressionQuality: importerViewModel.compressionQuality
+                                ) {
+//                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
+//                                if isAutoDelete {
+//                                    withAnimation {
+//                                        importerViewModel.images = []
+//                                    }
+//                                }
                             }
                         }) {
                             Text("Resize and Save Images")
@@ -115,7 +140,11 @@ public struct ControlPanel: View {
                             .font(.footnote)
                             .foregroundStyle(.red)
                         Button {
-                            viewModel.resizeAndSaveImages(images: importerViewModel.images) {
+                            viewModel.resizeAndSaveImages(
+                                images: importerViewModel.images,
+                                selectedFormat: importerViewModel.selectedFormat,
+                                compressionQuality: importerViewModel.compressionQuality
+                            ) {
                                 let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
                                 if isAutoDelete {
                                     withAnimation {

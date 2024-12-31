@@ -20,7 +20,7 @@ public class RemoveAlphaViewModel: ObservableObject {
     
     
     @MainActor
-    public func resizeRemoveAlphaAndSaveImages(images: [ImageFile], onSuccess: @escaping () -> Void) {
+    public func resizeRemoveAlphaAndSaveImages(images: [ImageFile], selectedFormat: ImageFormat, onSuccess: @escaping () -> Void) {
         guard !images.isEmpty else { return }
         withAnimation {
             outputState = .loading
@@ -32,7 +32,11 @@ public class RemoveAlphaViewModel: ObservableObject {
             for imageFile in images {
                 myGroup.enter()
                 if let imageWithoutAlpha = self.removeAlphaChannel(from: imageFile.image) {
-                    DestinationFolderManager.shared.saveImageToDownloads(image: imageWithoutAlpha, originalImage: imageFile.image)
+                    DestinationFolderManager.shared.saveImageToDownloads(
+                        image: imageWithoutAlpha,
+                        originalImage: imageFile.image,
+                        format: selectedFormat
+                    )
                 }
                 myGroup.leave()
             }
@@ -90,5 +94,14 @@ public class RemoveAlphaViewModel: ObservableObject {
             
             return newImage
         }
+
+    public func hasAlphaChannel(in images: [NSImage]) -> Bool {
+        return images.contains { image in
+            guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
+                return false
+            }
+            return cgImage.alphaInfo != .none && cgImage.alphaInfo != .noneSkipLast && cgImage.alphaInfo != .noneSkipFirst
+        }
+    }
 }
 

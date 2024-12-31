@@ -12,6 +12,8 @@ import Models
 public class ImageImporterViewModel: ObservableObject {
     @Published public var images: [ImageFile] = []
     @Published public var state: ViewState = .idle
+    @Published public var selectedFormat: ImageFormat = .jpeg
+    @Published public var compressionQuality: Float = 0.8 // Value between 0.0 and 1.0
     
     public init() {}
     
@@ -58,7 +60,8 @@ public class ImageImporterViewModel: ObservableObject {
                             fileName: fileName,
                             fileURL: url,
                             pixelWidth: pixelWidth,
-                            pixelHeight: pixelHeight
+                            pixelHeight: pixelHeight,
+                            fileSize: getFileSize(for: url)
                         )
                     )
                 }
@@ -109,7 +112,8 @@ public class ImageImporterViewModel: ObservableObject {
                                             image: nsImage,
                                             fileName: fileName,
                                             pixelWidth: pixelWidth,
-                                            pixelHeight: pixelHeight
+                                            pixelHeight: pixelHeight,
+                                            fileSize: data.count
                                         )
                                     )
                                 }
@@ -124,7 +128,8 @@ public class ImageImporterViewModel: ObservableObject {
                                             image: uiImage,
                                             fileName: fileName,
                                             pixelWidth: pixelWidth,
-                                            pixelHeight: pixelHeight
+                                            pixelHeight: pixelHeight,
+                                            fileSize: data.count
                                         )
                                     )
                                 }
@@ -142,7 +147,8 @@ public class ImageImporterViewModel: ObservableObject {
                                             fileName: fileName,
                                             fileURL: url,
                                             pixelWidth: pixelWidth,
-                                            pixelHeight: pixelHeight
+                                            pixelHeight: pixelHeight,
+                                            fileSize: self.getFileSize(for: url)
                                         )
                                     )
                                 }
@@ -158,7 +164,8 @@ public class ImageImporterViewModel: ObservableObject {
                                             fileName: fileName,
                                             fileURL: url,
                                             pixelWidth: pixelWidth,
-                                            pixelHeight: pixelHeight
+                                            pixelHeight: pixelHeight,
+                                            fileSize: data.count
                                         )
                                     )
                                 }
@@ -188,5 +195,19 @@ public class ImageImporterViewModel: ObservableObject {
     }
 #endif
 
+    
+    func getFileSize(for url: URL) -> Int? {
+        do {
+            // Get file attributes
+            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+            // Extract file size
+            if let fileSize = attributes[.size] as? Int {
+                return fileSize
+            }
+        } catch {
+            print("Error retrieving file size: \(error.localizedDescription)")
+        }
+        return nil
+    }
 }
 

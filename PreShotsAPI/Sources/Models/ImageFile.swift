@@ -16,12 +16,13 @@ public struct ImageFile: Identifiable, Hashable {
     public typealias PlatformImage = NSImage
 #endif
     
-    public init(image: PlatformImage, fileName: String, fileURL: URL? = nil, pixelWidth: Int, pixelHeight: Int) {
+    public init(image: PlatformImage, fileName: String, fileURL: URL? = nil, pixelWidth: Int, pixelHeight: Int, fileSize: Int?) {
         self.image = image
         self.fileName = fileName
         self.fileURL = fileURL
         self.pixelWidth = pixelWidth
         self.pixelHeight = pixelHeight
+        self.fileSize = fileSize
     }
     public let id = UUID()
     public let image: PlatformImage
@@ -29,4 +30,5 @@ public struct ImageFile: Identifiable, Hashable {
     public let fileURL: URL?
     public let pixelWidth: Int
     public let pixelHeight: Int
+    public let fileSize: Int?
 }

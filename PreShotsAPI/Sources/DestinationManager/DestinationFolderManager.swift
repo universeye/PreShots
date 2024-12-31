@@ -7,6 +7,7 @@
 
 import Foundation
 import Cocoa
+import Models
 
 public class DestinationFolderManager {
     public static let shared = DestinationFolderManager()
@@ -97,21 +98,32 @@ public class DestinationFolderManager {
         }
     }
     
-    public func saveImageToDownloads(image: NSImage, originalImage: NSImage) {
+    public func saveImageToDownloads(image: NSImage, originalImage: NSImage, format: ImageFormat) {
         guard let tiffData = image.tiffRepresentation,
-              let bitmap = NSBitmapImageRep(data: tiffData),
-              let pngData = bitmap.representation(using: .png, properties: [:]) else {
+              let bitmap = NSBitmapImageRep(data: tiffData) else {
             return
         }
-        var downloadsDirectory: URL
+        
+        // Use the format to determine the representation type and file extension
+        let imageData: Data?
+        switch format {
+        case .jpeg:
+            imageData = bitmap.representation(using: .jpeg, properties: [:])
+        case .png:
+            imageData = bitmap.representation(using: .png, properties: [:])
+        }
+        
+        guard let imageData = imageData else { return }
+        
         if let downloadsFolderUrl = self.accessSavedFolder() {
-            downloadsDirectory = downloadsFolderUrl
+            let downloadsDirectory = downloadsFolderUrl
             
-            let imageName = UUID().uuidString + ".png" // You can use original image name if desired
+            // Use the format's file extension
+            let imageName = UUID().uuidString + "." + format.fileExtension
             let imageUrl = downloadsDirectory.appendingPathComponent(imageName)
             
             do {
-                try pngData.write(to: imageUrl)
+                try imageData.write(to: imageUrl)
                 print("Image saved to \(imageUrl.path)")
             } catch {
                 print("Failed to save image: \(error.localizedDescription)")

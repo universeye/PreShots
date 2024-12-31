@@ -14,7 +14,7 @@ class ImageResizeViewModel: ObservableObject {
     @Published var outputState: ViewState = .idle
     @Published var resizedWidth: CGFloat = 1290
     @Published var resizedHeight: CGFloat = 2796
-    
+
     
     func swapWidthHeight() {
         let tempWidth = resizedHeight
@@ -24,7 +24,7 @@ class ImageResizeViewModel: ObservableObject {
     
     
     @MainActor
-    func resizeAndSaveImages(images: [ImageFile], onSuccess: @escaping () -> Void) {
+    func resizeAndSaveImages(images: [ImageFile], selectedFormat: ImageFormat, compressionQuality: Float, onSuccess: @escaping () -> Void) {
         guard !images.isEmpty else { return }
         withAnimation {
             outputState = .loading
@@ -35,45 +35,14 @@ class ImageResizeViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             for imageFile in images {
                 myGroup.enter()
-                if let resizedImage = self.resizeImage(image: imageFile.image, width: self.resizedWidth, height: self.resizedHeight) {
-                    DestinationFolderManager.shared.saveImageToDownloads(image: resizedImage, originalImage: imageFile.image)
-                }
-                myGroup.leave()
-            }
-            
-            myGroup.notify(queue: .main) {
-                print("Finished all requests.")
-                withAnimation {
-                    self.outputState = .success
-                    onSuccess()
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        self.outputState = .idle
-                    }
-                }
-            }
-        }
-        
-        
-        
-    }
-    
-    @MainActor
-    func resizeRemoveAlphaAndSaveImages(images: [ImageFile], onSuccess: @escaping () -> Void) {
-        guard !images.isEmpty else { return }
-        withAnimation {
-            outputState = .loading
-        }
-        
-        let myGroup = DispatchGroup()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            for imageFile in images {
-                myGroup.enter()
-                if let imageWithoutAlpha = self.removeAlphaChannel(from: imageFile.image) {
-                    DestinationFolderManager.shared.saveImageToDownloads(image: imageWithoutAlpha, originalImage: imageFile.image)
+                if let resizedImage = self.resizeImage(image: imageFile.image, width: self.resizedWidth, height: self.resizedHeight),
+                   let compressedData = self.compressImage(resizedImage, selectedFormat: selectedFormat, compressionQuality: compressionQuality),
+                   let compressedImage = NSImage(data: compressedData) {
+                    DestinationFolderManager.shared.saveImageToDownloads(
+                        image: compressedImage, 
+                        originalImage: imageFile.image,
+                        format: selectedFormat
+                    )
                 }
                 myGroup.leave()
             }
@@ -93,44 +62,6 @@ class ImageResizeViewModel: ObservableObject {
             }
         }
     }
-
-    // Helper function to remove alpha channel
-    private func removeAlphaChannel(from image: NSImage) -> NSImage? {
-            // Get the image representations to find actual pixel dimensions
-            guard let tiffRep = image.tiffRepresentation,
-                  let bitmapRep = NSBitmapImageRep(data: tiffRep) else { return nil }
-            
-            // Use actual pixel dimensions rather than point-based size
-            let pixelWidth = bitmapRep.pixelsWide
-            let pixelHeight = bitmapRep.pixelsHigh
-            
-            // Create a new RGB color space
-            guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB) else { return nil }
-            
-            // Create a new bitmap context without alpha channel
-            guard let bitmapContext = CGContext(
-                data: nil,
-                width: pixelWidth,
-                height: pixelHeight,
-                bitsPerComponent: 8,
-                bytesPerRow: 0,
-                space: colorSpace,
-                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue
-            ) else { return nil }
-            
-            // Draw the original image into the new context
-            guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else { return nil }
-            bitmapContext.draw(cgImage, in: CGRect(x: 0, y: 0, width: pixelWidth, height: pixelHeight))
-            
-            // Create a new image from the context
-            guard let newCGImage = bitmapContext.makeImage() else { return nil }
-            
-            // Create new NSImage with correct pixel dimensions
-            let newImage = NSImage(size: NSSize(width: pixelWidth, height: pixelHeight))
-            newImage.addRepresentation(NSBitmapImageRep(cgImage: newCGImage))
-            
-            return newImage
-        }
     
     func resizeImage(image: NSImage, width: CGFloat, height: CGFloat) -> NSImage? {
         guard let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil) else {
@@ -160,5 +91,19 @@ class ImageResizeViewModel: ObservableObject {
     func setDeviceSize(device: DeviceTypes) {
         self.resizedWidth = device.width
         self.resizedHeight = device.height
+    }
+    
+    private func compressImage(_ image: NSImage, selectedFormat: ImageFormat, compressionQuality: Float) -> Data? {
+        guard let tiffRepresentation = image.tiffRepresentation,
+              let bitmapImage = NSBitmapImageRep(data: tiffRepresentation) else { return nil }
+        
+        switch selectedFormat {
+        case .jpeg:
+            return bitmapImage.representation(using: .jpeg, 
+                                            properties: [.compressionFactor: compressionQuality])
+        case .png:
+            return bitmapImage.representation(using: .png, 
+                                            properties: [:])
+        }
     }
 }

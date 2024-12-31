@@ -12,6 +12,19 @@ struct ImageCell: View {
     let imageFile: ImageFile
     @ObservedObject var viewModel: ImageImporterViewModel
     
+    private func formatFileSize(_ bytes: Int?) -> String {
+        guard let bytes = bytes else { return "Unknown size" }
+        
+        let kb = Double(bytes) / 1024
+        let mb = kb / 1024
+        
+        if mb >= 1.0 {
+            return String(format: "%.2f MB", mb)
+        } else {
+            return String(format: "%.2f KB", kb)
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .center) {
             HStack(spacing: 0) {
@@ -46,6 +59,11 @@ struct ImageCell: View {
                 Text("(px)")
             }
             .font(.footnote)
+            
+            Text("\(formatFileSize(imageFile.fileSize))")
+                .font(.footnote)
+                .bold()
+                .padding(.bottom)
             
             Button(action: {
                 withAnimation {

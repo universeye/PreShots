@@ -18,7 +18,7 @@ public class ImageSetExporter: ObservableObject {
     
     public init() {}
     
-    public func exportImageSets(imageFiles: [ImageFile], onSuccess: @escaping () -> Void) {
+    public func exportImageSets(imageFiles: [ImageFile], selectedFormat: ImageFormat, compressionQuality: Float, onSuccess: @escaping () -> Void) {
         withAnimation {
             state = .loading
         }
@@ -32,7 +32,7 @@ public class ImageSetExporter: ObservableObject {
             do {
                 for imageFile in imageFiles {
                     myGroup.enter()
-                    try self.exportSingleImageSet(imageFile: imageFile)
+                    try self.exportSingleImageSet(imageFile: imageFile, selectedFormat: selectedFormat, compressionQuality: compressionQuality)
                     myGroup.leave()
                 }
             } catch {
@@ -64,7 +64,7 @@ public class ImageSetExporter: ObservableObject {
       
     }
     
-    private func exportSingleImageSet(imageFile: ImageFile) throws {
+    private func exportSingleImageSet(imageFile: ImageFile, selectedFormat: ImageFormat, compressionQuality: Float) throws {
         
         
         let image = imageFile.image
@@ -111,21 +111,34 @@ public class ImageSetExporter: ObservableObject {
                     continue
                 }
                 
-                let fileName = "\(imageName)\(scale.rawValue).png"
+                let fileName = "\(imageName)\(scale.rawValue).\(selectedFormat.fileExtension)"
                 let fileURL = outputURL.appendingPathComponent(fileName)
                 
                 if let tiffData = scaledImage.tiffRepresentation,
-                   let bitmapImage = NSBitmapImageRep(data: tiffData),
-                   let pngData = bitmapImage.representation(using: .png, properties: [:]) {
-                    try pngData.write(to: fileURL)
-                    print("Saved: \(fileURL.path)")
+                   let bitmapImage = NSBitmapImageRep(data: tiffData) {
+                    let imageData: Data?
+                    
+                    switch selectedFormat {
+                    case .jpeg:
+                        imageData = bitmapImage.representation(using: .jpeg, 
+                                                             properties: [.compressionFactor: NSNumber(value: compressionQuality)])
+                    case .png:
+                        imageData = bitmapImage.representation(using: .png, properties: [:])
+                    }
+                    
+                    if let imageData = imageData {
+                        try imageData.write(to: fileURL)
+                        print("Saved: \(fileURL.path)")
+                    } else {
+                        print("Failed to convert image to \(selectedFormat.showString) data for scale: \(scale.rawValue)")
+                    }
                 } else {
-                    print("Failed to convert image to PNG data for scale: \(scale.rawValue)")
+                    print("Failed to convert image to bitmap data for scale: \(scale.rawValue)")
                 }
             }
             
-            // Create Contents.json file
-            try createContentsJson(for: imageName, at: outputURL)
+            // Update Contents.json creation to use the selected format
+            try createContentsJson(for: imageName, format: selectedFormat, at: outputURL)
             
             print("Image set created successfully for \(imageName) in \(outputURL.path)")
             
@@ -147,22 +160,22 @@ public class ImageSetExporter: ObservableObject {
         return newImage
     }
     
-    private func createContentsJson(for imageName: String, at url: URL) throws {
+    private func createContentsJson(for imageName: String, format: ImageFormat, at url: URL) throws {
         let contentsJson = """
         {
           "images" : [
             {
-              "filename" : "\(imageName).png",
+              "filename" : "\(imageName).\(format.fileExtension)",
               "idiom" : "universal",
               "scale" : "1x"
             },
             {
-              "filename" : "\(imageName)@2x.png",
+              "filename" : "\(imageName)@2x.\(format.fileExtension)",
               "idiom" : "universal",
               "scale" : "2x"
             },
             {
-              "filename" : "\(imageName)@3x.png",
+              "filename" : "\(imageName)@3x.\(format.fileExtension)",
               "idiom" : "universal",
               "scale" : "3x"
             }

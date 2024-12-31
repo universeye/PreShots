@@ -8,7 +8,7 @@
 import SwiftUI
 import ImagesSetsFeature
 import ImportImagesFeature
-//import DestinationManager
+import Models
 
 public struct ImagesSetsControlView: View {
     @ObservedObject var importerViewModel: ImageImporterViewModel
@@ -22,6 +22,26 @@ public struct ImagesSetsControlView: View {
     public var body: some View {
         VStack {
       
+            VStack(alignment: .leading) {
+                Picker(selection: $importerViewModel.selectedFormat, label: Text("Image Format")) {
+                    ForEach(ImageFormat.allCases, id: \.self) { format in
+                        Text(format.showString)
+                            .tag(format.rawValue)
+                    }
+                }
+                .pickerStyle(.menu)
+                .frame(width: 400)
+                
+                if importerViewModel.selectedFormat == .jpeg {
+                    HStack {
+                        Text("Compression Quality")
+                        Slider(value: $importerViewModel.compressionQuality, in: 0.1...1, step: 0.01)
+                            .frame(width: 300)
+                        Text("\(Int(importerViewModel.compressionQuality * 100))%")
+                    }
+                    .padding(.vertical, 8)
+                }
+            }
             
             ImageSetsIndicatorView()
             
@@ -35,7 +55,11 @@ public struct ImagesSetsControlView: View {
                         .foregroundStyle(.red)
                     Button {
                         guard imageSetExporterViewModel.state != .loading else { return }
-                        imageSetExporterViewModel.exportImageSets(imageFiles: importerViewModel.images) {
+                        imageSetExporterViewModel.exportImageSets(
+                            imageFiles: importerViewModel.images,
+                            selectedFormat: importerViewModel.selectedFormat,
+                            compressionQuality: importerViewModel.compressionQuality
+                        ) {
                             let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
                             if isAutoDelete {
                                 withAnimation {
@@ -57,9 +81,14 @@ public struct ImagesSetsControlView: View {
                 Spacer()
                
                 
-                Button(action: {
-                    guard imageSetExporterViewModel.state != .loading else { return }
-                    imageSetExporterViewModel.exportImageSets(imageFiles: importerViewModel.images) {
+                Button(
+                    action: {
+                        guard imageSetExporterViewModel.state != .loading else { return }
+                        imageSetExporterViewModel.exportImageSets(
+                            imageFiles: importerViewModel.images,
+                            selectedFormat: importerViewModel.selectedFormat,
+                            compressionQuality: importerViewModel.compressionQuality
+                        ) {
                         let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
                         if isAutoDelete {
                             withAnimation {
