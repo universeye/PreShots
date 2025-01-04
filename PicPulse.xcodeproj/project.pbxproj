@@ -26,7 +26,6 @@
 		BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BFC111C02C782B5D00470BE5 /* RevenueCat */; };
 		BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38C802C5FD1DC00525EF9 /* APIKey.swift */; };
 		BFEFD7842C860407007B3EDC /* CheckForUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */; };
-		BFEFD7862C860456007B3EDC /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = BFEFD7852C860456007B3EDC /* Sparkle */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
 		BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD622BF90B6200C208B1 /* ContentView.swift */; };
 		BFFCDD652BF90B6400C208B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFCDD642BF90B6400C208B1 /* Assets.xcassets */; };
@@ -75,7 +74,6 @@
 				BF10C2F12C17023600C567A3 /* ImageResizeFeature in Frameworks */,
 				BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */,
 				BF1C5C932CDA4D34009A902E /* RemoveAlphaFeature in Frameworks */,
-				BFEFD7862C860456007B3EDC /* Sparkle in Frameworks */,
 				BF10B0772C73139400235D45 /* ImagesSetsFeature in Frameworks */,
 				BF59A1222C60B02300C87C0E /* StoreKit.framework in Frameworks */,
 				BF1C5C952CDA505B009A902E /* DestinationManager in Frameworks */,
@@ -202,7 +200,6 @@
 				BF10C2F02C17023600C567A3 /* ImageResizeFeature */,
 				BF10B0762C73139400235D45 /* ImagesSetsFeature */,
 				BFC111C02C782B5D00470BE5 /* RevenueCat */,
-				BFEFD7852C860456007B3EDC /* Sparkle */,
 				BF1C5C922CDA4D34009A902E /* RemoveAlphaFeature */,
 				BF1C5C942CDA505B009A902E /* DestinationManager */,
 			);
@@ -239,7 +236,6 @@
 			mainGroup = BFFCDD542BF90B6200C208B1;
 			packageReferences = (
 				BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */,
-				BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = BFFCDD5E2BF90B6200C208B1 /* Products */;
 			projectDirPath = "";
@@ -508,7 +504,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -525,7 +521,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -542,7 +538,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PreShots/Preview Content\"";
 				DEVELOPMENT_TEAM = N492VC6PS9;
@@ -559,7 +555,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -608,14 +604,6 @@
 				minimumVersion = 5.3.0;
 			};
 		};
-		BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sparkle-project/Sparkle.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.6.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -647,11 +635,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BFC111BF2C782B2B00470BE5 /* XCRemoteSwiftPackageReference "purchases-ios" */;
 			productName = RevenueCat;
-		};
-		BFEFD7852C860456007B3EDC /* Sparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFEFD7822C85FC38007B3EDC /* XCRemoteSwiftPackageReference "Sparkle" */;
-			productName = Sparkle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

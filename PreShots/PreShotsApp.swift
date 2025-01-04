@@ -7,16 +7,16 @@
 
 import SwiftUI
 import RevenueCat
-import Sparkle
+//import Sparkle
 
 @main
 struct PreShotsApp: App {
-    private let updaterController: SPUStandardUpdaterController
+//    private let updaterController: SPUStandardUpdaterController
     
     init() {
         Purchases.logLevel = .debug
         Purchases.configure(withAPIKey: APIKey.revenueCatId)
-        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+//        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
     }
     
     var body: some Scene {
@@ -49,7 +49,7 @@ struct PreShotsApp: App {
         
         Settings {
             TabView {
-                GeneralSettingsView(updater: updaterController.updater)
+                GeneralSettingsView(/*updater: updaterController.updater*/)
                     .tabItem { Label("Settings", systemImage: "gearshape") }
             }
             
