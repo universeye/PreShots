@@ -111,12 +111,12 @@ public struct ControlPanel: View {
                                     selectedFormat: importerViewModel.selectedFormat,
                                     compressionQuality: importerViewModel.compressionQuality
                                 ) {
-//                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
-//                                if isAutoDelete {
-//                                    withAnimation {
-//                                        importerViewModel.images = []
-//                                    }
-//                                }
+                                let isAutoDelete = defaults.bool(forKey:"autoRemoveImage")
+                                if isAutoDelete {
+                                    withAnimation {
+                                        importerViewModel.removeAllImages()
+                                    }
+                                }
                             }
                         }) {
                             Text("Resize and Save Images")

@@ -17,13 +17,13 @@ public class ImageImporterViewModel: ObservableObject {
     
     public init() {}
     
-    func removeImage(target: UUID) {
+    public func removeImage(target: UUID) {
         if let firstIndex = images.firstIndex(where: { $0.id == target }) {
             images.remove(at: firstIndex)
         }
     }
     
-    func removeAllImages() {
+    public func removeAllImages() {
         images = []
     }
     

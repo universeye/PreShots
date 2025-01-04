@@ -21,7 +21,18 @@ struct PreShotsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if #available(macOS 15.0, *) {
+                ContentView()
+                    .containerBackground(
+                        .thinMaterial, for: .window
+                    )
+                    .toolbarBackgroundVisibility(
+                        .hidden, for: .windowToolbar
+                    )
+            } else {
+                ContentView()
+                
+            }
         }
         .defaultSize(width: 800, height: 600)
         .commands {
@@ -29,6 +40,12 @@ struct PreShotsApp: App {
                 CheckForUpdatesView(updater: updaterController.updater)
             }
         }
+        
+//        MenuBarExtra("My Menu Bar Extra", systemImage: "square.stack.3d.forward.dottedline") {
+//            Text("Test")
+//                .padding()
+//        }
+//        .menuBarExtraStyle(.window)
         
         Settings {
             TabView {
