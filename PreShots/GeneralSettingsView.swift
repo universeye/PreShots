@@ -102,14 +102,14 @@ struct GeneralSettingsView: View {
                     TipsListView(isPresentTipSheet: $isPresentTipSheet)
                 })
 
-                Button {
-                    if let updater = updater {
-                        updater.checkForUpdates()
-                    }
-                } label: {
-                    Label("Check for updates", systemImage: "arrow.down.circle")
-                }
-                .buttonStyle(.link)
+//                Button {
+//                    if let updater = updater {
+//                        updater.checkForUpdates()
+//                    }
+//                } label: {
+//                    Label("Check for updates", systemImage: "arrow.down.circle")
+//                }
+//                .buttonStyle(.link)
                 
             }
             

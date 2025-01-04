@@ -35,11 +35,11 @@ struct PreShotsApp: App {
             }
         }
         .defaultSize(width: 800, height: 600)
-        .commands {
-            CommandGroup(after: .appInfo) {
-                CheckForUpdatesView(updater: updaterController.updater)
-            }
-        }
+//        .commands {
+//            CommandGroup(after: .appInfo) {
+//                CheckForUpdatesView(updater: updaterController.updater)
+//            }
+//        }
         
 //        MenuBarExtra("My Menu Bar Extra", systemImage: "square.stack.3d.forward.dottedline") {
 //            Text("Test")
