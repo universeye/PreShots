@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var isPresentTipSheet: Bool = false
     @State private var selectedFeature: AppFeatures = .batchImageResizer
     @State private var step = 1
+    @State private var showInspector: Bool = false
     
     enum AppFeatures: Int, CaseIterable {
         case batchImageResizer = 0
@@ -36,8 +37,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
-            
             HStack {
                 ImagesGridView(viewModel: viewModel)
                     .animation(.easeIn, value: selectedFeature)
@@ -79,6 +78,9 @@ struct ContentView: View {
         }
         .padding()
         .frame(minWidth: 1000, minHeight: 800)
+        .inspector(isPresented: $showInspector) {
+            Text("djifjie")
+        }
     }
     
     @ViewBuilder

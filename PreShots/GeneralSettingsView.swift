@@ -111,50 +111,6 @@ struct GeneralSettingsView: View {
 //                }
 //                .buttonStyle(.link)
                 
-            }
-            
-            Section {
-                Link(destination: Links.getLink(link: .email)!, label: {
-                    Label("Bugs Report/Feature Request", systemImage: "envelope")
-                })
-                Link(destination: Links.getLink(link: .twitterTerry)!, label: {
-                    HStack {
-                        Image("twitterlogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:  25, height: 25)
-                        Text("X(Twitter)")
-                    }
-                })
-                Link(destination: Links.getLink(link: .lilredbook)!, label: {
-                    HStack {
-                        Image("XiaohongshuLOGO")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        Text("RED")
-                    }
-                })
-                Link(destination: Links.getLink(link: .thread)!, label: {
-                    HStack {
-                        Image("threadslogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        Text("Threads")
-                    }
-                })
-                Link(destination: Links.getLink(link: .mastadon)!, label: {
-                    HStack {
-                        Image("mastodon_logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        Text("Mastodon")
-                    }
-                })
-            } header: {
-                Text("Contact")
             } footer: {
                 VStack {
                     Image("appicon1024")
@@ -166,13 +122,14 @@ struct GeneralSettingsView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            
+            
         }
         .formStyle(.grouped)
-        .frame(minWidth: 450, minHeight: 200)
         .navigationTitle("PicPulse Settings")
         .onAppear {
             withAnimation {
-                isShowWelcome.toggle()
+                isShowWelcome = true
             }
         }
 

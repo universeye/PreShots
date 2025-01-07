@@ -15,6 +15,12 @@ struct PreShotsApp: App {
     
     init() {
         Purchases.logLevel = .debug
+        if let proxyURL = URL(string: "https://api.rc-backup.com") {
+            Purchases.proxyURL = proxyURL
+            print("Proxy URL is set to: \(proxyURL)")
+        } else {
+            print("Failed to create a valid URL.")
+        }
         Purchases.configure(withAPIKey: APIKey.revenueCatId)
 //        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
     }
@@ -23,9 +29,9 @@ struct PreShotsApp: App {
         WindowGroup {
             if #available(macOS 15.0, *) {
                 ContentView()
-                    .containerBackground(
-                        .thinMaterial, for: .window
-                    )
+//                    .containerBackground(
+//                        .thinMaterial, for: .window
+//                    )
                     .toolbarBackgroundVisibility(
                         .hidden, for: .windowToolbar
                     )
@@ -51,9 +57,16 @@ struct PreShotsApp: App {
             TabView {
                 GeneralSettingsView(/*updater: updaterController.updater*/)
                     .tabItem { Label("Settings", systemImage: "gearshape") }
+                    .frame(minWidth: 450, minHeight: 200)
+                Contactsection()
+                    .tabItem { Label("Contact", systemImage: "person")}
+                    .frame(minWidth: 450, minHeight: 200)
             }
             
         }
-        .defaultSize(width: 600, height: 800)
+        
+        
+        
+        .defaultSize(width: 600, height: 500)
     }
 }

@@ -25,6 +25,7 @@
 		BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7245342C60F33F00804A93 /* TipsListView.swift */; };
 		BFC111C12C782B5D00470BE5 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = BFC111C02C782B5D00470BE5 /* RevenueCat */; };
 		BFD38C812C5FD1DC00525EF9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD38C802C5FD1DC00525EF9 /* APIKey.swift */; };
+		BFD85A5A2D2D18C20082CAD9 /* Contactsection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD85A592D2D18C20082CAD9 /* Contactsection.swift */; };
 		BFEFD7842C860407007B3EDC /* CheckForUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */; };
 		BFFCDD612BF90B6200C208B1 /* PreShotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */; };
 		BFFCDD632BF90B6200C208B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCDD622BF90B6200C208B1 /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		BF6384F32C50B71500AC365E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BF7245342C60F33F00804A93 /* TipsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsListView.swift; sourceTree = "<group>"; };
 		BFD38C802C5FD1DC00525EF9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		BFD85A592D2D18C20082CAD9 /* Contactsection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactsection.swift; sourceTree = "<group>"; };
 		BFEFD7832C860407007B3EDC /* CheckForUpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForUpdatesView.swift; sourceTree = "<group>"; };
 		BFFCDD5D2BF90B6200C208B1 /* PicPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreShotsApp.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				BF6384F32C50B71500AC365E /* Info.plist */,
 				BFFCDD602BF90B6200C208B1 /* PreShotsApp.swift */,
+				BFD85A592D2D18C20082CAD9 /* Contactsection.swift */,
 				BFFCDD622BF90B6200C208B1 /* ContentView.swift */,
 				BFD38C802C5FD1DC00525EF9 /* APIKey.swift */,
 				BF62069A2C6AFE830001B151 /* Links.swift */,
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD85A5A2D2D18C20082CAD9 /* Contactsection.swift in Sources */,
 				BF62069F2C6AFF7D0001B151 /* View+Ext.swift in Sources */,
 				BF62069B2C6AFE830001B151 /* Links.swift in Sources */,
 				BF7245352C60F33F00804A93 /* TipsListView.swift in Sources */,
@@ -525,7 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -559,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.terrykuo.PicPulse;
 				PRODUCT_NAME = PicPulse;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
